@@ -5,7 +5,5 @@ draft: false
 layout: single
 ---
 
-XYZZY
-
 - [Harmonogram]({{< ref harmonogram >}})
  
