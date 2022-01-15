@@ -5,6 +5,14 @@ draft: false
 layout: single
 ---
 
+- [Program przedmiotu]({{< ref program >}})
+- [Regulamin i zasady oceniania]({{ < ref zasady > }})
 - [Harmonogram]({{< ref harmonogram >}})
-- [Obsada]({{< ref obsada >}})
+- [Materiały]({{< ref materialy >}})
  
+## Obsada
+
+### Wykład
+
+### Laboratorium
+
