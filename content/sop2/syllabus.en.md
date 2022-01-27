@@ -1,5 +1,5 @@
 ---
-title: "OPS2 Syllabus"
+title: "Syllabus"
 date: 2022-02-10T10:00:00+01:00
 draft: false
 menu: "sop2"
@@ -34,21 +34,14 @@ At the end of the course students should:
 
 ### Lecture scope:
 
-**Inter-process communication and synchronization.** Single system inter-process communication: named pipes (FIFO) and unnamed pipes (pipe), shared memory, message queues; synchronization of cooperating processes and threads: implementation and programmers interface. Deadlock problem: model, detection and solutions.
-
-**Implementation of file system.** Organization of selected file system types. Access and file protection, file access modes.
-
-**Input/Output subsystem.** Character and block devices; access modes. Input/Output devices drivers.
-
-**Memory management.** Organization of the main memory and processor memory access. Memory allocation algorithms. Process memory usage patterns. Virtual memory: concept and implementations (paging/segmentation on-demand); properties and programmers interface.
-
-**Network communication.** OSI networking model. Connection-oriented and connection-less sockets interface in networking programs (client/server model). Communication and synchronization problems in networking programs. Examples of network services.
-
-**Jobs scheduling.** Concurrency implementation of threads and processes. Job scheduling algorithms (for one and multiprocessor systems. Special requirements and implementation of real time systems job scheduling. Evaluation of scheduling algorithms.
-
-**Security and protection of computer systems.** Protection goals. Authorization, authentication, resources access control, system integrity, non-repudiation, confidentiality – concepts and applications. Security evaluation standards.
-
-**Review of contemporary operating systems.** Linux, MS Windows, QNX/Neutrino, FreeRTOS. Virtualization of computer systems.
+- **Inter-process communication and synchronization.** Single system inter-process communication: named pipes (FIFO) and unnamed pipes (pipe), shared memory, message queues; synchronization of cooperating processes and threads: implementation and programmers interface. Deadlock problem: model, detection and solutions.
+- **Implementation of file system.** Organization of selected file system types. Access and file protection, file access modes.
+- **Input/Output subsystem.** Character and block devices; access modes. Input/Output devices drivers.
+- **Memory management.** Organization of the main memory and processor memory access. Memory allocation algorithms. Process memory usage patterns. Virtual memory: concept and implementations (paging/segmentation on-demand); properties and programmers interface.
+- **Network communication.** OSI networking model. Connection-oriented and connection-less sockets interface in networking programs (client/server model). Communication and synchronization problems in networking programs. Examples of network services.
+- **Jobs scheduling.** Concurrency implementation of threads and processes. Job scheduling algorithms (for one and multiprocessor systems. Special requirements and implementation of real time systems job scheduling. Evaluation of scheduling algorithms.
+- **Security and protection of computer systems.** Protection goals. Authorization, authentication, resources access control, system integrity, non-repudiation, confidentiality – concepts and applications. Security evaluation standards.
+- **Review of contemporary operating systems.** Linux, MS Windows, QNX/Neutrino, FreeRTOS. Virtualization of computer systems.
 
 ### Laboratory scope:
 

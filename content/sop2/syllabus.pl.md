@@ -1,5 +1,5 @@
 ---
-title: "Program przedmiotu SOP2"
+title: "Program przedmiotu"
 date: 2022-02-10T10:00:00+01:00
 draft: false
 menu: "sop2"
@@ -34,21 +34,14 @@ Po ukończeniu kursu studenci powinni:
 
 ### Treść wykładu
 
-**Komunikacja międzyprocesowa i synchronizacja.** Komunikacja między procesami jednego systemu komputerowego: łącza nazwane (FIFO) i nienazwane (pipe), pamięć dzielona, kolejki komunikatów; synchronizacja współpracujących procesów i wątków: sposoby realizacji i interfejs programisty. Problem zakleszczania: model i metody postępowania.
-
-**Realizacja systemów plików.** Organizacja wybranych systemów plików. Dostęp i ochrona plików, tryby dostępu do plików.
-
-**Podystem wejścia/wyjścia.** Urządzenia znakowe i blokowe; tryby dostępu. Moduły obsługi urządzeń wejścia/wyjścia.
-
-**Zarządzanie pamięcią.** Organizacja pamięci operacyjnej i dostępu do pamięci przez procesor. Algorytmy przydziału pamięci. Modele wykorzystania pamięci przez proces. Pamięć wirtualna: budowa, własności, interfejs programisty.
-
-**Komunikacja sieciowa.** Model komunikacji OSI. Interfejs gniazd w programowaniu połączeniowych i bezpołączeniowych aplikacji sieciowych (w układzie klient-serwer). Problemy komunikacji i synchronizacji aplikacji sieciowych. Przykłady usług sieciowych.
-
-**Szeregowanie zadań.** Realizacja współbieżności procesów i wątków. Algorytmy szeregowania zadań (systemów jedno- i wieloprocesorowych). Specyfika szeregowania zadań w systemach czasu rzeczywistego. Ocena jakości algorytmów szeregowania.
-
-**Ochrona i bezpieczeństwo systemów komputerowych.** Cele ochrony. Uwierzytelnianie, kontrola dostępu do zasobów, integralność, niezaprzeczalność, poufność - koncepcje i realizacje. Standardy oceny bezpieczeństwa.
-
-**Przegląd współczesnych systemów operacyjnych.** Linux, MS Windows, QNX/Neutrino, freeRTOS. Wirtualizacja systemów komputerowych.
+ - **Komunikacja międzyprocesowa i synchronizacja.** Komunikacja między procesami jednego systemu komputerowego: łącza nazwane (FIFO) i nienazwane (pipe), pamięć dzielona, kolejki komunikatów; synchronizacja współpracujących procesów i wątków: sposoby realizacji i interfejs programisty. Problem zakleszczania: model i metody postępowania.
+ - **Realizacja systemów plików.** Organizacja wybranych systemów plików. Dostęp i ochrona plików, tryby dostępu do plików.
+ - **Podystem wejścia/wyjścia.** Urządzenia znakowe i blokowe; tryby dostępu. Moduły obsługi urządzeń wejścia/wyjścia
+ - **Zarządzanie pamięcią.** Organizacja pamięci operacyjnej i dostępu do pamięci przez procesor. Algorytmy przydziału pamięci. Modele wykorzystania pamięci przez proces. Pamięć wirtualna: budowa, własności, interfejs programisty.
+ - **Komunikacja sieciowa.** Model komunikacji OSI. Interfejs gniazd w programowaniu połączeniowych i bezpołączeniowych aplikacji sieciowych (w układzie klient-serwer). Problemy komunikacji i synchronizacji aplikacji sieciowych. Przykłady usług sieciowych.
+ - **Szeregowanie zadań.** Realizacja współbieżności procesów i wątków. Algorytmy szeregowania zadań (systemów jedno- i wieloprocesorowych). Specyfika szeregowania zadań w systemach czasu rzeczywistego. Ocena jakości algorytmów szeregowania.
+ - **Ochrona i bezpieczeństwo systemów komputerowych.** Cele ochrony. Uwierzytelnianie, kontrola dostępu do zasobów, integralność, niezaprzeczalność, poufność - koncepcje i realizacje. Standardy oceny bezpieczeństwa.
+ - **Przegląd współczesnych systemów operacyjnych.** Linux, MS Windows, QNX/Neutrino, freeRTOS. Wirtualizacja systemów komputerowych.
 
 ### Zakres zajęć laboratoryjnych
 

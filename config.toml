@@ -1,7 +1,6 @@
 theme = "sop"
 
 disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
-relativeURLs = true
 buildFuture = true
 
 [languages]
