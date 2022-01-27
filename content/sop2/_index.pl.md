@@ -6,7 +6,7 @@ layout: single
 usemenu: "sop2"
 ---
 
-- [Program przedmiotu]({{< ref program >}})
+- [Program przedmiotu]({{< ref syllabus >}})
 - [Regulamin i zasady oceniania]({{< ref zasady >}})
 - [Harmonogram]({{< ref harmonogram >}})
 - [Materiały]({{< ref materialy >}})

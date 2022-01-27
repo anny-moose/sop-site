@@ -27,17 +27,19 @@ Semestr letni 2020/2021
 | 09.06 | [K2/1 **Kolokwium 2.**](152.html), [W14. Ochrona i bezpieczeństwo.](98.html) |
 
 
+
 ## Laboratorium: poniedziałki, g. 14:15 - 17:00
 
-| Data | Tytuł | Grupy |
+| Data | Tytuł | Grupy USOS |
 | ---- | ----- | ----- | 
-| 08.03 | [L1 FIFO/pipe](67.html) | LAB1, LAB3, LAB5, LAB7 |
-| 15.03 | [L1 FIFO/pipe](67.html) | LAB2, LAB4, LAB6 |
-| 22.03 | [L2 Kolejki POSIX](102.html) | LAB1, LAB3, LAB5, LAB7 |
-| 29.03 | [L2 Kolejki POSIX](102.html) | LAB2, LAB4, LAB6 |
-| 12.04 | [L3 Gniazda pselect](104.html) | LAB1, LAB3, LAB5, LAB7 |
-| 19.04 | [L3 Gniazda pselect](104.html) | LAB2, LAB4, LAB6 |
-| 10.05 | [L4 Gniazda, wątki, pamięć wspólna, synchronizacja](107.html) | LAB1, LAB3, LAB5, LAB7 |
-| 17.05 | [L4 Gniazda, wątki, pamięć wspólna, synchronizacja](107.html) | LAB2, LAB4, LAB6 |
+| 08.03 | [L1 FIFO/pipe]({{< ref "lab/l1" >}}) | LAB1, LAB3, LAB5, LAB7 |
+| 15.03 | [L1 FIFO/pipe]({{< ref "lab/l1" >}}) | LAB2, LAB4, LAB6 |
+| 22.03 | [L2 Kolejki POSIX]({{< ref "lab/l2" >}}) | LAB1, LAB3, LAB5, LAB7 |
+| 29.03 | [L2 Kolejki POSIX]({{< ref "lab/l2" >}}) | LAB2, LAB4, LAB6 |
+| 12.04 | [L3 Gniazda pselect]({{< ref "lab/l3" >}}) | LAB1, LAB3, LAB5, LAB7 |
+| 19.04 | [L3 Gniazda pselect]({{< ref "lab/l3" >}}) | LAB2, LAB4, LAB6 |
+| 10.05 | [L4 Gniazda, wątki, pamięć wspólna, synchronizacja]({{< ref "lab/l4" >}}) | LAB1, LAB3, LAB5, LAB7 |
+| 17.05 | [L4 Gniazda, wątki, pamięć wspólna, synchronizacja]({{< ref "lab/l4" >}}) | LAB2, LAB4, LAB6 |
+| 18.05 | 19:00 -- zamknięcie zapisów na poprawy w moodle | Wszystkie grupy |
 | 24.05 |  L5 Poprawy | Wszystkie grupy |
 | 31.05 |  L5 Poprawy | Wszystkie grupy |
