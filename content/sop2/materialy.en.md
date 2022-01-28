@@ -8,8 +8,8 @@ menu: "sop2"
 
 ## Lecture reference
 
-- [Lec 1 Introduction to interprocess communication (IPC). IPC with pipes/FIFOs.](69)
-- [Lec 2 POSIX IPC: shared memory and message queues](72)
+- [Lec 1 Introduction to interprocess communication (IPC). IPC with pipes/FIFOs.]({{< ref "wyk/w1" >}})
+- [Lec 2 POSIX IPC: shared memory and message queues]({{< ref "wyk/w2" >}})
 - [Lec 3 Synchronization. Deadlocks.](75)
 - [Lec 4 POSIX synchronization.](76)
 - [Lec 5 Introduction to networking.](77)

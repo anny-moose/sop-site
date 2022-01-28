@@ -9,24 +9,25 @@ Summer semester 2020/2021
 
 ## Lecture: Wednesdays, 16.15-18.00
 
-| Date | Topic |
-| ---  | ----- |
-| 24.02 | 	Lec 1 	Introduction to interprocess communication (IPC). IPC with pipes/FIFOs. |
-| 03.03 |	Lec 2 	POSIX IPC: shared memory and queues |
-| 10.03  |	Lec 3 	Synchronization. Deadlocks. |
-| 17.03 |	Lec 4 	POSIX synchronization. |
-| 24.03 |	Lec 5 	Introduction to networking. |
-| 07.04 | 	Lec 6 	Sockets interface. |
-| 14.04 |	Lec 7 	Network programming. |
-| 21.04 | 	T1/1 	Test 1., Lec8. Networking security issues. |
-| 28.04 |	Lec 9 	Main memory management. |
-| 05.05 |	Lec 10 	Virtual memory. |
-| 19.05 |	Lec 11 	File systems. |
-| 26.05 |	Lec 12 	Implementations of file systems, Distributed file systems. |
-| 02.06 |	Lec 13 	Real-time systems. |
-| 09.06 |	T2/1 	Test 2,  Lec14. Protection and security. |
-| 10.06 15:15 | 	T1/2 	Test 1 re-take  (Thursday! - Laboratory hours). |
-| 16.06 |	T2/2 	Test 2 re-take |
+| Date        | Topic                                                                                                    |
+| ---         | -----                                                                                                    |
+| 24.02       | [Lec 1 	Introduction to interprocess communication (IPC). IPC with pipes/FIFOs]({{< ref "wyk/w1" >}}) |
+| 03.03       | [Lec 2 	POSIX IPC: shared memory and queues]({{< ref "wyk/w2" >}})                                    |
+|             |                                                                                                       |
+| 10.03       | Lec 3 	Synchronization. Deadlocks.                                                                    |
+| 17.03       | Lec 4 	POSIX synchronization.                                                                         |
+| 24.03       | Lec 5 	Introduction to networking.                                                                    |
+| 07.04       | Lec 6 	Sockets interface.                                                                             |
+| 14.04       | Lec 7 	Network programming.                                                                           |
+| 21.04       | T1/1 	Test 1., Lec8. Networking security issues.                                                      |
+| 28.04       | Lec 9 	Main memory management.                                                                        |
+| 05.05       | Lec 10 	Virtual memory.                                                                               |
+| 19.05       | Lec 11 	File systems.                                                                                 |
+| 26.05       | Lec 12 	Implementations of file systems, Distributed file systems.                                    |
+| 02.06       | Lec 13 	Real-time systems.                                                                            |
+| 09.06       | T2/1 	Test 2,  Lec14. Protection and security.                                                        |
+| 10.06 15:15 | T1/2 	Test 1 re-take  (Thursday! - Laboratory hours).                                                 |
+| 16.06       | T2/2 	Test 2 re-take                                                                                  |
 
 ## Laboratories: Thursdays, 15:15 - 18:00
 
