@@ -1,1 +1,1 @@
-{{ $res := .Get 0  }}{{ (.Page.Resources.GetMatch $res).RelPermalink }}
+{{ $res := .Get 0  }}{{ $mm := (.Page.Resources.GetMatch $res) }}{{if $mm}}{{ $mm.RelPermalink }}{{else}}{{ errorf "Resource %q for page %q does not exist: " $res .Page.File}}{{end}}
