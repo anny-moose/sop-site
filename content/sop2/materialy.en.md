@@ -19,11 +19,11 @@ menu: "sop2"
 - [Lec 9 Management of operating memory.]({{< ref "wyk/w9" >}})
 - [Lec 10 Virtual memory.]({{< ref "wyk/w10" >}})
 - [Lec 11 File systems.]({{< ref "wyk/w11" >}})
-- [Lec 12 Implementations of file systems. Distributed file systems.](85)
-- [Lec 13 Real-time systems.](86)
-- [Lec 14 Protection and security.](87)
-- [T1 Test 1.](153)
-- [T2 Test 2.](154)
+- [Lec 12 Implementations of file systems. Distributed file systems.]({{< ref "wyk/w12" >}})
+- [Lec 13 Real-time systems.]({{< ref "wyk/w13" >}})
+- [Lec 14 Protection and security.]({{< ref "wyk/w14" >}})
+- [T1 Test 1.]({{< ref "wyk/k1" >}})
+- [T2 Test 2.]({{< ref "wyk/k2" >}})
 
 ## Laboratory reference
 

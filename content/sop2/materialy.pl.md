@@ -19,11 +19,11 @@ menu: "sop2"
 -   [W9 Zarządzanie pamięcią operacyjną.]({{< ref "wyk/w9" >}})
 -   [W10 Pamięć wirtualna.]({{< ref "wyk/w10" >}})
 -   [W11 Systemy plików.]({{< ref "wyk/w11" >}})
--   [W12 Realizacje systemów plików. Rozproszone systemy plików.](96.html)
--   [W13 Systemy czasu rzeczywistego.](97.html)
--   [W14 Ochrona i bezpieczeństwo.](98.html)
--   [K1 Kolokwium 1.](151.html)
--   [K2 Kolokwium 2.](152.html)
+-   [W12 Realizacje systemów plików. Rozproszone systemy plików.]({{< ref "wyk/w12" >}})
+-   [W13 Systemy czasu rzeczywistego.]({{< ref "wyk/w13" >}})
+-   [W14 Ochrona i bezpieczeństwo.]({{< ref "wyk/w14" >}})
+-   [K1 Kolokwium 1.]({{< ref "wyk/k1" >}})
+-   [K2 Kolokwium 2.]({{< ref "wyk/k2" >}})
 
 ## Opisy ćwiczeń laboratoryjnych
 	

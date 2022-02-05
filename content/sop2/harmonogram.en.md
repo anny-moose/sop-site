@@ -18,15 +18,16 @@ Summer semester 2020/2021
 | 24.03       | [Lec 5 	Introduction to networking]({{< ref "wyk/w5" >}})                                             |
 | 07.04       | [Lec 6 	Sockets interface]({{< ref "wyk/w6" >}})                                                      |
 | 14.04       | [Lec 7 	Network programming]({{< ref "wyk/w7" >}})                                                    |
-| 21.04       | T1/1 	Test 1., [Lec8. Networking security issues]({{< ref "wyk/w8" >}})                                                      |
-| 28.04       | [Lec 9 	Main memory management]({{< ref "wyk/w9" >}})                                                                        |
-| 05.05       | [Lec 10 	Virtual memory]({{< ref "wyk/w10" >}})                                                                               |
-| 19.05       | [Lec 11 	File systems]({{< ref "wyk/w11" >}})                                                                                 |
-| 26.05       | Lec 12 	Implementations of file systems, Distributed file systems.                                    |
-| 02.06       | Lec 13 	Real-time systems.                                                                            |
-| 09.06       | T2/1 	Test 2,  Lec14. Protection and security.                                                        |
+| 21.04       | [T1/1 	Test 1.]({{< ref "wyk/k1" >}}), [Lec8. Networking security issues]({{< ref "wyk/w8" >}})       |
+| 28.04       | [Lec 9 	Main memory management]({{< ref "wyk/w9" >}})                                                 |
+| 05.05       | [Lec 10 	Virtual memory]({{< ref "wyk/w10" >}})                                                       |
+| 19.05       | [Lec 11 	File systems]({{< ref "wyk/w11" >}})                                                         |
+| 26.05       | [Lec 12 	Implementations of file systems, Distributed file systems.]({{< ref "wyk/w12" >}})           |
+| 02.06       | [Lec 13 	Real-time systems.]({{< ref "wyk/w13" >}})                                                   |
+| 09.06       | [T2/1 	Test 2]({{< ref "wyk/k2" >}}),  [Lec14. Protection and security.]({{< ref "wyk/w14" >}})       |
 | 10.06 15:15 | T1/2 	Test 1 re-take  (Thursday! - Laboratory hours).                                                 |
 | 16.06       | T2/2 	Test 2 re-take                                                                                  |
+
 
 
 ## Laboratories: Thursdays, 15:15 - 18:00
