@@ -31,14 +31,14 @@ Summer semester 2020/2021
 
 | Date  | Topic                                                                         | USOS Group       |
 | ----- | ---------                                                                  | ------           |
-| 11.03 | [Lab1 FIFO/pipe]({{< ref "lab/l1">}})                                        | LAB1, LAB3 |
-| 18.03 | [Lab1 FIFO/pipe]({{< ref "lab/l1">}})                                        | LAB2, LAB4       |
-| 25.03 | [Lab2 POSIX queues]({{< ref "lab/l2">}})                                     | LAB1, LAB3 |
-| 01.04 | [Lab2 POSIX queues]({{< ref "lab/l2">}})                                     | LAB2, LAB4       |
-| 22.04 | [Lab3 Network sockets, pselect]({{< ref "lab/l3">}})                         | LAB1, LAB3 |
-| 29.04 | [Lab3 Network sockets, pselect]({{< ref "lab/l3">}})                         | LAB2, LAB4       |
-| 20.05 | [Lab4 Sockets, threads, shared memory, synchronization]({{< ref "lab/l4">}}) | LAB1, LAB3 |
-| 27.05 | [Lab4 Sockets, threads, shared memory, synchronization]({{< ref "lab/l4">}}) | LAB2, LAB4       |
-| 28.05 | 7:00pm: retake signup closes (in moodle)                                     | Everyone         |
-| 10.06 | Lab5: Retakes                                                              | Everyone         |
-| 10.06 | Lab5: Retakes                                                              | Everyone         |
+| 10.03 | [Lab1 FIFO/pipe]({{< ref "lab/l1">}})                                        | LAB1, LAB3 |
+| 17.03 | [Lab1 FIFO/pipe]({{< ref "lab/l1">}})                                        | LAB2, LAB4       |
+| 24.03 | [Lab2 POSIX queues]({{< ref "lab/l2">}})                                     | LAB1, LAB3 |
+| 31.03 | [Lab2 POSIX queues]({{< ref "lab/l2">}})                                     | LAB2, LAB4       |
+| 21.04 | [Lab3 Network sockets, pselect]({{< ref "lab/l3">}})                         | LAB1, LAB3 |
+| 28.04 | [Lab3 Network sockets, pselect]({{< ref "lab/l3">}})                         | LAB2, LAB4       |
+| 19.05 | [Lab4 Sockets, threads, shared memory, synchronization]({{< ref "lab/l4">}}) | LAB1, LAB3 |
+| 26.05 | [Lab4 Sockets, threads, shared memory, synchronization]({{< ref "lab/l4">}}) | LAB2, LAB4       |
+| 27.05 | 7:00pm: retake signup closes (in moodle)                                     | Everyone         |
+| 02.06 | Lab5: Retakes                                                              | Everyone         |
+| 09.06 | Lab5: Retakes                                                              | Everyone         |
