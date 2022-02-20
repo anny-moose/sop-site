@@ -12,6 +12,10 @@ usemenu: "sop2"
 
 ### Lecture
 
+- Paweł Sobótka
+  - office hours: Wednesday 12:00pm-13:00pm, room 524, please contact me beforehand
+  - email: pawel.sobotka@pw.edu.pl
+
 ### Laboratory
 
 - *Lab coordinator:* Jan Karwowski

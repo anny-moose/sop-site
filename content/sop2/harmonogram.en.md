@@ -5,7 +5,7 @@ draft: false
 menu: "sop2"
 ---
 
-Summer semester 2020/2021
+Summer semester 2021/2022
 
 ## Lecture: Wednesdays, 8:15-10:00, 328
 

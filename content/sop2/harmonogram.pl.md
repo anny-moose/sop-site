@@ -5,7 +5,7 @@ draft: false
 menu: "sop2"
 ---
 
-Semestr letni 2020/2021
+Semestr letni 2021/2022
 
 ## Wykłady: środy, g. 10:15 - 12:00, 328
 

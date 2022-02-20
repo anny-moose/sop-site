@@ -11,6 +11,10 @@ layout: single
 
 ### Wykład
 
+- Paweł Sobótka
+  - konsultacje: środa 12:00-13:00, pok 524, po uprzednim umówieniu
+  - email: pawel.sobotka@pw.edu.pl
+
 ### Laboratorium
 
 - *Koordynator laboratorium:* Jan Karwowski
