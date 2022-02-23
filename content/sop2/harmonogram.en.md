@@ -39,6 +39,6 @@ Summer semester 2021/2022
 | 28.04 | [Lab3 Network sockets, pselect]({{< ref "lab/l3">}})                         | LAB2, LAB4       |
 | 19.05 | [Lab4 Sockets, threads, shared memory, synchronization]({{< ref "lab/l4">}}) | LAB1, LAB3 |
 | 26.05 | [Lab4 Sockets, threads, shared memory, synchronization]({{< ref "lab/l4">}}) | LAB2, LAB4       |
-| 27.05 | 7:00pm: retake signup closes (in moodle)                                     | Everyone         |
+| 27.05 | 8:00pm: retake signup closes (in moodle)                                     | Everyone         |
 | 02.06 | Lab5: Retakes                                                              | Everyone         |
 | 09.06 | Lab5: Retakes                                                              | Everyone         |
