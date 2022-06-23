@@ -16,3 +16,5 @@
  - [ ] Zmienić przykład w tutorialu SOP1 do wątków, bo metoda Monte
    Carlo nie jest znana studentom i zaciemnia obraz. Albo lepiej ją
    opisać, jeśli się da w 4 zdaniach.
+ - [ ] Po dużych kodach źródłowych opisać co się dzieje po kolei
+ - [ ] Przykład z powiadomieniem wątkiem w tutorialu AIO
