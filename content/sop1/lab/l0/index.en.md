@@ -82,7 +82,7 @@ The destination folder will sometimes change, it will always be stated in your t
 
 ### Environment preparation
 
-Unlike the previous classes, we do not require any concrete IDE. However, a good editor should:
+Unlike the previous classes, we do not require any particular IDE. However, a good editor should:
 
 - show live compilation errors (which allows us to learn about them and find relevant code quicker),
 - autocomplete function names (helpful while entering longer names).
