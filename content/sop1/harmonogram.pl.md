@@ -16,7 +16,8 @@ menu: sop1
 | 24.11 | [Sygnały POSIX]({{< ref "wyk/w4" >}})                        |
 | 08.12 | [Niskopoziomowe operacje wejścia/wyjścia]({{< ref "wyk/w5" >}}) |
 | 22.12 | [Wątki. P-wątki i muteksy.]({{< ref "wyk/w6" >}})            |
-| 19.01 | [Asynchroniczne operacje wejścia/wyjścia]({{< ref "wyk/w7" >}}) |
+| 12.01 | [Asynchroniczne operacje wejścia/wyjścia]({{< ref "wyk/w7" >}}) |
+| 26.01 | [Planowanie przydziału czasu CPU]({{< ref "wyk/w8" >}})      |
 
 ## Zajęcia laboratoryjne: wtorki, godz. 14:**45** - 17:00, sale 218, 219, 304
 
