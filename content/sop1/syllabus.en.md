@@ -35,11 +35,11 @@ The "Operating Systems 2" (OPS2) is the continuation of this course.
 
 ## Lecture scope
 
-**Introduction.**Tasks and properties of operating systems. Structures of computer systems and operating systems. System kernel structure and the interface.
+**Introduction.** Tasks and properties of operating systems. Structures of computer systems and operating systems. System kernel structure and the interface.
 
-**Processes and threads.**Concepts of process, lightweight process, thread and fiber; their life cycle and programmers interface. Implementation of concurrency of processes and threads. Co-routines and continuations. Signals and their handling in processes and threads. POSIX standard functions related to processes, signals and threads.
+**Processes and threads.** Concepts of process, lightweight process, thread and fiber; their life cycle and programmers interface. Implementation of concurrency of processes and threads. Co-routines and continuations. Signals and their handling in processes and threads. POSIX standard functions related to processes, signals and threads.
 
-**Models and interfaces of file systems.**Files, file system layout. Operations on the file systems via programmers interface. Files access and protection, files access modes. POSIX standard functions related to manipulation of files and folders in both synchronous and asynchronous mode. C language standard library input/output streams manipulation functions.
+**Models and interfaces of file systems.** Files, file system layout. Operations on the file systems via programmers interface. Files access and protection, files access modes. POSIX standard functions related to manipulation of files and folders in both synchronous and asynchronous mode. C language standard library input/output streams manipulation functions.
 
 ## Laboratory scope
 
