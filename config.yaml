@@ -21,6 +21,7 @@ languages:
     weight: 2
 
 params:
+  BookTheme: "auto"
   BookSection: "*"
 
 markup:
