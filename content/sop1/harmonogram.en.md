@@ -35,7 +35,5 @@ Mondays, 2:15-5pm, rooms 203, 218.
 | 2023-01-16          | [L4 AIO]({{< ref "lab/l4" >}})                                 | 1, 3               |
 | 2023-01-23          | [L4 AIO]({{< ref "lab/l4" >}})                                 | 2, 4               |
 | 2023-01-24          | **7:00pm** retake signup closes (in moodle)                    | Everyone           |
-| In the exam session | L5 Retakes                                                     | Everyone           |
+| 2023-02-09 8:30, 2023-02-09 11:15  | L5 Retakes                                                     | Everyone           |
 
-
-*The retakes date will be provided after the exam session schedule is published.*
