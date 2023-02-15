@@ -1,30 +1,30 @@
 ---
 title: "Schedule"
-date: 2022-02-10T10:00:00+01:00
+date: 2023-02-14T10:00:00+01:00
 menu: "sop2"
 ---
 
-Summer semester 2021/2022
+Summer semester 2022/2023
 
-## Lecture: Wednesdays, 8:15-10:00, 328
+## Lecture: Wednesdays, 8:15-10:00, room 107
 
-| Date        | Topic                                                                                                    |
-| ---         | -----                                                                                                    |
-| 02.03       | [Lec 1 	Introduction to interprocess communication (IPC). IPC with pipes/FIFOs]({{< ref "wyk/w1" >}}) |
-| 09.03       | [Lec 2 	POSIX IPC: shared memory and queues]({{< ref "wyk/w2" >}})                                    |
-| 16.03       | [Lec 3 	Synchronization. Deadlocks.]({{< ref "wyk/w3" >}})                                            |
-| 23.03       | [Lec 4 	POSIX synchronization]({{< ref "wyk/w4" >}})                                                  |
-| 30.03       | [Lec 5 	Introduction to networking]({{< ref "wyk/w5" >}})                                             |
-| 06.04       | [Lec 6 	Sockets interface]({{< ref "wyk/w6" >}})                                                      |
-| 13.04       | [Lec 7 	Network programming]({{< ref "wyk/w7" >}})                                                    |
-| 27.04       | [T1/1 	Test 1.]({{< ref "wyk/k1" >}}), [Lec8. Networking security issues]({{< ref "wyk/w8" >}})       |
-| 11.05       | [Lec 9 	Main memory management]({{< ref "wyk/w9" >}})                                                 |
-| 18.05       | [Lec 10 	Virtual memory]({{< ref "wyk/w10" >}})                                                       |
-| 25.05       | [Lec 11 	File systems]({{< ref "wyk/w11" >}})                                                         |
-| 01.06       | [Lec 12 	Implementations of file systems, Distributed file systems.]({{< ref "wyk/w12" >}})           |
-| 08.06       | [Lec 13 	Real-time systems.]({{< ref "wyk/w13" >}})                                                   |
-| 15.06       | [T2/1 	Test 2]({{< ref "wyk/k2" >}}),  [Lec14. Protection and security.]({{< ref "wyk/w14" >}})       |
-
+| Date        | Topic                                                                                                 |
+| ---         | -----                                                                                                 |
+| 22.02       | [Lec 1 	Introduction to interprocess communication (IPC). IPC with pipes/FIFOs]({{< ref "wyk/w1" >}}) |
+| 01.03       | [Lec 2 	POSIX IPC: shared memory and queues]({{< ref "wyk/w2" >}})                                    |
+| 08.03       | [Lec 3 	Synchronization. Deadlocks.]({{< ref "wyk/w3" >}})                                            |
+| 15.03       | [Lec 4 	POSIX synchronization]({{< ref "wyk/w4" >}})                                                  |
+| 22.03       | [Lec 5 	Introduction to networking]({{< ref "wyk/w5" >}})                                             |
+| 29.03       | [Lec 6 	Sockets interface]({{< ref "wyk/w6" >}})                                                      |
+| 05.04       | [Lec 7 	Network programming]({{< ref "wyk/w7" >}})                                                    |
+| 12.04       | [T1/1 	Test 1.]({{< ref "wyk/k1" >}}), [Lec8. Networking security issues]({{< ref "wyk/w8" >}})      |
+| 19.04       | [Lec 9 	Main memory management]({{< ref "wyk/w9" >}})                                                 |
+| 26.04       | [Lec 10 	Virtual memory]({{< ref "wyk/w10" >}})                                                    |
+| 10.05       | [Lec 11 	File systems]({{< ref "wyk/w11" >}})                                                      |
+| 17.05       | [Lec 12 	Implementations of file systems, Distributed file systems.]({{< ref "wyk/w12" >}})        |
+| 24.05       | [Lec 13 	Real-time systems.]({{< ref "wyk/w13" >}})                                                |
+| 31.05       | [T2/1 	Test 2]({{< ref "wyk/k2" >}}),  [Lec14. Protection and security.]({{< ref "wyk/w14" >}})      |
+| 14.06       | **Lecture Tests Retakes**                                                                             |
 
 ## Laboratories: Thursdays, 15:15 - 18:00
 

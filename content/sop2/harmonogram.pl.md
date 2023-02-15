@@ -1,31 +1,30 @@
 ---
 title: "Harmonogram"
-date: 2022-02-10T10:00:00+01:00
+date: 2023-02-14T10:00:00+01:00
 menu: "sop2"
 ---
 
-Semestr letni 2021/2022
+Semestr letni 2022/2023
 
-## Wykłady: środy, g. 10:15 - 12:00, 328
+## Wykłady: czwartki, g. 8:15 - 10:00, s. 107
 
 | Data | Tytuł |
 | ---- | ----- |
-| 2.03 | [W1 Wprowadzenie do komunikacji międzyprocesowej (IPC). Łącza.]({{< ref "wyk/w1" >}}) |
-| 09.03 | [W2 Komunikacja międzyprocesowa POSIX: pamięć wspólna i kolejki komunikatów]({{< ref "wyk/w2" >}}) |
-| 16.03 | [W3 Synchronizacja. Zakleszczenia.]({{< ref "wyk/w3" >}}) |
-| 23.03 | [W4 Synchronizacja POSIX.]({{< ref "wyk/w4" >}}) |
-| 30.03 | [W5 Wprowadzenie do sieci TCP/IP.]({{< ref "wyk/w5" >}}) |
-| 06.04 | [W6 Interfejs gniazd.]({{< ref "wyk/w6" >}}) |
-| 13.04 | [W7 Programowanie sieciowe.]({{< ref "wyk/w7" >}}) |
-| 27.04 | [K1/1 **Kolokwium 1.**]({{< ref "wyk/k1" >}}), [W8. Zagadnienia bezpieczeństwa sieciowego.]({{< ref "wyk/w8" >}}) |
-| 11.05 | [W9 Zarządzanie pamięcią operacyjną.]({{< ref "wyk/w9" >}}) |
-| 18.05 | [W10 Pamięć wirtualna.]({{< ref "wyk/w10" >}}) |
-| 25.05 | [W11 Systemy plików.]({{< ref "wyk/w11" >}}) |
-| 01.06 | [W12 Realizacje systemów plików.]({{< ref "wyk/w12" >}}), Rozproszone systemy plików. |
-| 08.06 | [W13 Systemy czasu rzeczywistego.]({{< ref "wyk/w13" >}}) |
-| 15.06 | [K2/1 **Kolokwium 2.**]({{< ref "wyk/k2" >}}), [W14. Ochrona i bezpieczeństwo.]({{< ref "wyk/w14" >}}) |
-
-
+| 23.02 | [W1 Wprowadzenie do komunikacji międzyprocesowej (IPC). Łącza.]({{< ref "wyk/w1" >}}) |
+| 02.03 | [W2 Komunikacja międzyprocesowa POSIX: pamięć wspólna i kolejki komunikatów]({{< ref "wyk/w2" >}}) |
+| 09.03 | [W3 Synchronizacja. Zakleszczenia.]({{< ref "wyk/w3" >}}) |
+| 16.03 | [W4 Synchronizacja POSIX.]({{< ref "wyk/w4" >}}) |
+| 23.03 | [W5 Wprowadzenie do sieci TCP/IP.]({{< ref "wyk/w5" >}}) |
+| 30.03 | [W6 Interfejs gniazd.]({{< ref "wyk/w6" >}}) |
+| 06.04 | [W7 Programowanie sieciowe.]({{< ref "wyk/w7" >}}) |
+| 13.04 | [K1/1 **Kolokwium 1.**]({{< ref "wyk/k1" >}}), [W8. Zagadnienia bezpieczeństwa sieciowego.]({{< ref "wyk/w8" >}}) |
+| 20.04 | [W9 Zarządzanie pamięcią operacyjną.]({{< ref "wyk/w9" >}}) |
+| 27.04 | [W10 Pamięć wirtualna.]({{< ref "wyk/w10" >}}) |
+| 11.05 | [W11 Systemy plików.]({{< ref "wyk/w11" >}}) |
+| 18.05 | [W12 Realizacje systemów plików.]({{< ref "wyk/w12" >}}), Rozproszone systemy plików. |
+| 25.05 | [W13 Systemy czasu rzeczywistego.]({{< ref "wyk/w13" >}}) |
+| 01.06 | [K2/1 **Kolokwium 2.**]({{< ref "wyk/k2" >}}), [W14. Ochrona i bezpieczeństwo.]({{< ref "wyk/w14" >}}) |
+| 15.06 | **Poprawy kolokwiów** |
 
 ## Laboratorium: poniedziałki, g. 14:15 - 17:00
 
