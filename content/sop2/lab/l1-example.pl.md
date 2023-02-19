@@ -1,7 +1,9 @@
 ---
 title: "Zadanie testowe z tematu pipe/FIFO"
 date: 2022-02-01T19:32:59+01:00
+bookHidden: true
 ---
+
 ## Treść
 
 Napisz program używający łączy pipe do jednostronnej komunikacji pomiędzy trzema procesami. Każdy proces jest połączony z każdym innym jednym łączem pipe. Procesy tworzą coś w rodzaju trójkąta z jednym wyróżnionym rogiem (proces rodzic), kierunek łącza ma być tak dobrany aby możliwe było przesłanie komunikatów „w koło” pomiędzy procesami.

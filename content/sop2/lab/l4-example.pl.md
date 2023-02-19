@@ -1,6 +1,7 @@
 ---
 title: "Zadanie testowe z tematu: gniazda, wątki, pamięć wspólna, synchronizacja"
 date: 2022-02-01T19:36:27+01:00
+bookHidden: true
 ---
 
 ## Treść

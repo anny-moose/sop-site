@@ -1,7 +1,9 @@
 ---
 title: "Task on pipe/FIFO"
 date: 2022-02-01T19:32:59+01:00
+bookHidden: true
 ---
+
 ## Goal
 
 Write 2-process application that exchanges text messages via pipes. Communication must be bidirectional.

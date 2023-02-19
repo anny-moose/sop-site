@@ -1,5 +1,5 @@
 ---
-title: "netcat"
+title: "Netcat"
 date: 2022-06-07T10:46:18+02:00
 ---
 
