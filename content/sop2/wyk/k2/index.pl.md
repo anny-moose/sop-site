@@ -1,6 +1,7 @@
 ---
-title: "Zakres kolokwium 2"
+title: "Kolokwium 2"
 date: 2022-02-05T16:04:15+01:00
+weight: 145
 ---
 
 - SOP1.W8: [Zarządzanie procesami i wątkami.]({{<ref "../w8">}})

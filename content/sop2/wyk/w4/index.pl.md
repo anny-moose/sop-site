@@ -1,7 +1,11 @@
 ---
-title: "Wykład 4. Synchronizacja POSIX"
+title: "Synchronizacja POSIX"
 date: 2022-02-03T19:09:45+01:00
+weight: 40
 ---
+
+# Wykład 4 - Synchronizacja POSIX
+
 ## Zakres wykładu
 
   - Interfejs IPC Unix System V:

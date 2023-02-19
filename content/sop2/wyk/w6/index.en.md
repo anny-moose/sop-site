@@ -1,7 +1,10 @@
 ---
-title: "Lec6. Sockets"
+title: "Sockets interface"
 date: 2022-02-03T19:18:47+01:00
+weight: 60
 ---
+
+# Lecture 6 - Sockets interface
 
 ## Scope
   

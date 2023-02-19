@@ -1,7 +1,11 @@
 ---
-title: "Wykład 8. Zagadnienia bezpieczeństwa sieciowego"
+title: "Bezpieczeństwo sieciowe"
 date: 2022-02-04T22:00:19+01:00
+weight: 80
 ---
+
+# Wykład 8 - Zagadnienia bezpieczeństwa sieciowego
+
 ## Zakres wykładu
 
   - Elementarne techniki kryptograficzne.

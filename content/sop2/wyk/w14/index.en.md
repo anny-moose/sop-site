@@ -1,7 +1,10 @@
 ---
-title: "Lec14. Protection and security"
+title: "Protection and security"
 date: 2022-02-05T16:19:23+01:00
+weight: 140
 ---
+
+# Lecture 14 - Protection and security
 
 ## Scope of the lecture
 

@@ -1,7 +1,10 @@
 ---
-title: "Lec11. File systems"
+title: "File systems"
 date: 2022-02-04T22:17:05+01:00
+weight: 110
 ---
+
+# Lecture 11 - File systems
 
 ## Scope of the lecture
 

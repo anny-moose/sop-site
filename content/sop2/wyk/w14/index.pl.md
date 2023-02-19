@@ -1,7 +1,10 @@
 ---
-title: "Wykład 14. Ochrona i bezpieczeństwo"
+title: "Ochrona i bezpieczeństwo"
 date: 2022-02-05T15:59:32+01:00
+weight: 140
 ---
+
+# Wykład 14 - Ochrona i bezpieczeństwo
 
 ## Zakres wykładu
 

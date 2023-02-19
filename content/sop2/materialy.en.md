@@ -1,8 +1,6 @@
 ---
 title: "Reference material"
 date: 2022-02-10T10:00:00+01:00
-layout: single
-menu: "sop2"
 ---
 
 ## Lecture reference

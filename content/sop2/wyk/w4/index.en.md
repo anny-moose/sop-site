@@ -1,7 +1,11 @@
 ---
-title: "Lec4. POSIX synchronization"
+title: "POSIX synchronization"
 date: 2022-02-03T19:09:50+01:00
+weight: 40
 ---
+
+# Lecture 4 - POSIX synchronization
+
 ## Scope
   
 

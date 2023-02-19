@@ -1,7 +1,10 @@
 ---
-title: "Lec5. Introduction to networking"
+title: "TCP/IP networking"
 date: 2022-02-03T19:14:17+01:00
+weight: 50
 ---
+
+# Lecture 5 - Introduction to TCP/IP networking
 
 ## Scope
   

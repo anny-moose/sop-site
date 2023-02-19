@@ -1,8 +1,11 @@
 ---
-title: "Wykład 2. Komunikacja międzyprocesowa POSIX: pamięć wspólna i kolejki komunikatów"
+title: "Pamięć wspólna i kolejki komunikatów"
 date: 2022-02-10T10:00:00+01:00
+weight: 20
 ---
   
+# Wykład 2 - Komunikacja międzyprocesowa POSIX: pamięć wspólna i kolejki komunikatów
+
 ## Zakres wykładu
   
   - Wiadomości podstawowe o interfejsie IPC w standardzie POSIX.

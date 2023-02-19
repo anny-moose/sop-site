@@ -1,7 +1,10 @@
 ---
-title: "Wykład 9. Zarządzanie pamięcią"
+title: "Zarządzanie pamięcią"
 date: 2022-02-04T22:05:53+01:00
+weight: 90
 ---
+
+# Wykład 9 - Zarządzanie pamięcią operacyjną
 
 ## Zakres wykładu
 

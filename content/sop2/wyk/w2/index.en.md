@@ -1,7 +1,10 @@
 ---
-title: "Lec2. POSIX IPC: shared memory and message queues"
+title: "Shared memory and message queues"
 date: 2022-02-10T10:00:00+01:00
+weight: 20
 ---
+
+# Lecture 2 - POSIX IPC: shared memory and message queues
 
 ## Scope
 

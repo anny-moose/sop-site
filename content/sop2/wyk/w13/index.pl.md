@@ -1,7 +1,10 @@
 ---
-title: "Wykład 13. Systemy czasu rzeczywistego"
+title: "Systemy czasu rzeczywistego"
 date: 2022-02-05T15:59:28+01:00
+weight: 130
 ---
+
+# Wykład 13 - Systemy czasu rzeczywistego
 
 ## Zakres wykładu
 

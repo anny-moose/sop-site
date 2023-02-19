@@ -1,7 +1,10 @@
 ---
-title: "Wykład 1. Wprowadzenie do komunikacji międzyprocesowej (IPC). Łącza."
+title: "Łącza"
 date: 2022-02-10T10:00:00+01:00
+weight: 10
 ---
+
+# Wykład 1 - Wprowadzenie do komunikacji międzyprocesowej (IPC), łącza
 
 ## Zakres wykładu
   

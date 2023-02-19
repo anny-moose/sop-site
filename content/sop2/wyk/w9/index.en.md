@@ -1,7 +1,10 @@
 ---
-title: "Lec9. Memory management"
+title: "Memory management"
 date: 2022-02-04T22:05:56+01:00
+weight: 90
 ---
+
+# Lecture 9 - Main memory management
 
 ## Scope of the lecture
 

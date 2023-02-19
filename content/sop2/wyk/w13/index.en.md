@@ -1,7 +1,10 @@
 ---
-title: "Lec13. Real-time systems"
+title: "Real-time systems"
 date: 2022-02-05T16:17:06+01:00
+weight: 130
 ---
+
+# Lecture 13 - Real-time systems
 
 ## Scope of the lecture
 

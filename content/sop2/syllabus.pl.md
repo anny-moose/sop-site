@@ -1,7 +1,6 @@
 ---
 title: "Program przedmiotu"
 date: 2022-02-10T10:00:00+01:00
-menu: "sop2"
 ---
 
  - Wykład: 30h

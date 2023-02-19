@@ -3,14 +3,14 @@ title: "Operating systems 2"
 date: 2022-02-10T10:00:00+01:00
 ---
 
-[Operating systems 2 page in USOS](https://usosweb.usos.pw.edu.pl/kontroler.php?_action=katalog2/przedmioty/pokazPlanZajecPrzedmiotu&prz_kod=1120-IN000-ISA-0244&cdyd_kod=2022L&division=semester)
+[Operating systems 2 page in USOS](https://usosweb.usos.pw.edu.pl/kontroler.php?_action=katalog2/przedmioty/pokazPrzedmiot&prz_kod=1120-IN000-ISA-0244)
 
 ## Staff
 
 ### Lecture
 
 - Paweł Sobótka
-  - office hours: Wednesday 12:00pm-13:00pm, room 524, please contact me beforehand
+  - office hours: Thursdays 10:00am-11:00am, room 524, please contact me beforehand
   - email: pawel.sobotka@pw.edu.pl
 
 ### Laboratory

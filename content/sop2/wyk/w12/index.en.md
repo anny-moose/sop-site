@@ -1,7 +1,11 @@
 ---
-title: "Lec12. Implementations of file systems. Distributed file systems."
+title: "Implementations of file systems"
 date: 2022-02-05T15:56:46+01:00
+weight: 120
 ---
+
+# Lecture 12 - Implementations of file systems, distributed file systems
+
 ## Scope of the lecture
 
   - Implementations of file systems

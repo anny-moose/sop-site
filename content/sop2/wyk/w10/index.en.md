@@ -1,7 +1,10 @@
 ---
-title: "Lec10.  Virtual memory"
+title: "Virtual memory"
 date: 2022-02-04T22:11:02+01:00
+weight: 100
 ---
+
+# Lecture 10 - Virtual memory
 
 ## Scope of the lecture
 

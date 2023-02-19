@@ -1,7 +1,10 @@
 ---
-title: "Lec8. Network security issues"
+title: "Network security"
 date: 2022-02-04T22:00:23+01:00
+weight: 80
 ---
+
+# Lecture 8 - Network security issues
 
 ## Scope of the lecture
 

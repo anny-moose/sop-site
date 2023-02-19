@@ -1,7 +1,10 @@
 ---
-title: "Wykład 3. Synchronizacja. Zakleszczenia"
+title: "Synchronizacja i zakleszczenia"
 date: 2022-01-28T17:23:23+01:00
+weight: 30
 ---
+
+# Wykład 3 - Synchronizacja i zakleszczenia
 
 ## Zakres wykładu
   

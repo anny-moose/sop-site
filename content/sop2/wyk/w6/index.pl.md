@@ -1,7 +1,10 @@
 ---
-title: "Wykład 6. Interfejs gniazd"
+title: "Interfejs gniazd"
 date: 2022-02-03T19:18:40+01:00
+weight: 60
 ---
+
+# Wykład 6 - Interfejs gniazd
 
 ## Zakres wykładu
 

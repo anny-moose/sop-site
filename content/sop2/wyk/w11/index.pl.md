@@ -1,7 +1,10 @@
 ---
-title: "Wykład 11. Systemy plików"
+title: "Systemy plików"
 date: 2022-02-04T22:17:03+01:00
+weight: 110
 ---
+
+# Wykład 11 - Systemy plików
 
 ## Zakres wykładu
 

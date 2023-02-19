@@ -1,7 +1,10 @@
 ---
-title: "Wykład 10. Pamięć wirtualna"
+title: "Pamięć wirtualna"
 date: 2022-02-04T22:11:05+01:00
+weight: 100
 ---
+
+# Wykład 10 - Pamięć wirtualna
 
 ## Zakres wykładu
 
