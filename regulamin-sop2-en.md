@@ -19,7 +19,7 @@ The subject consists of a lecture and a laboratory.
     - entry (8 minutes): solving the moodle test
     - programming task (90 minutes)
   
-- In the exam session, there is a retake where you can improve your grades in exactly one topic (Lab1, Lab2, Lab3, or Lab4). You can retake either one part (test, program) or both. Registration for the retakes will start immediately after the last laboratory classes in the semester and will be open for **24 hours** only.
+- The last two classes are retake classes. You can retake a single lab topic (Lab1, Lab2, Lab3, or Lab4). You can retake either one part (test, program) or both. Registration for the retakes will start immediately after the last laboratory classes in the semester and will be open for **24 hours** only.
 - In the exam session, student may retake lecture tests as well. One may retake one of or both tests, one after another.
 
 

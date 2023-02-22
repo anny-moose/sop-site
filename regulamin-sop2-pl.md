@@ -18,7 +18,7 @@ Przedmiot składa się z wykładu i laboratorium.
     - pytania i odpowiedzi (ok. 30 minut): w trakcie tej części prowadzący wyjaśnia wątpliwości i odpowiada na pytania studentów 
      - wejściówka (8 minut): rozwiązywanie testu w moodle
      - zadanie programistyczne (90 minut)
-- W sesji egzaminacyjnej jest organizowana poprawa, na której można poprawiać oceny uzyskane na dokładnie jednych zajęciach (L1, L2, L3, lub L4). Można poprawiać albo jedną część (wejściówkę, program) albo obie części. Zapisy na poprawy zostaną uruchomione od razu po ostatnich zajęciach laboratoryjnych w semestrze i potrwają **24 godziny**.
+- Na ostatnich dwóch zajęciach w semestrze organizowana jest poprawa, na której można poprawiać oceny uzyskane na dokładnie jednych zajęciach (L1, L2, L3, lub L4). Można poprawiać albo jedną część (wejściówkę, program) albo obie części. Zapisy na poprawy zostaną uruchomione od razu po ostatnich zajęciach laboratoryjnych w semestrze i potrwają **24 godziny**.
 - W sesji egzaminacyjnej jest organizowana poprawa sprawdzianów wykładowych. Można poprawiać jeden lub oba testy, jeden po drugim.
 
 
