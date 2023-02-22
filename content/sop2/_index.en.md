@@ -16,9 +16,8 @@ date: 2022-02-10T10:00:00+01:00
 ### Laboratory
 
 - *Lab coordinator:* Jan Karwowski
-  - office hours: Monday 11:00am-12:00pm, room 526
   - email: jan.karwowski@pw.edu.pl
   - note: usually I don't read messages on teams
-- Gr 1, gr 2: Mateusz Majewski
-- Gr 3, gr 4: Weronika Głuszczak
-- Gr 5: Tomasz Karwowski
+- Gr 1, gr 2: 
+- Gr 3, gr 4: 
+- Gr 5: 
