@@ -36,6 +36,30 @@ In order to fix this, find in `C/C++: Edit Configurations (UI)` the `C standard`
 to a corresponding option starting with `gnu`, for instance `gnu17` instead of `c17`.
 {{< /hint >}}
 
+## Tasks preparing to laboratory
+
+{{< hint info >}}
+Introduction notes:
+
+- This tutorial is fairly easy and rather long, next ones will be harder and shorter
+- Quick look at this material will not suffice, you should compile and run all the programs, check how they work, read
+  additional materials like man pages. As you read the material please do all the exercises and questions. At the end
+  you will find sample task similar to the one you will do during the labs, please do it at home.
+- You will find additional information in yellow sections, questions and tasks in blue ones. Under the question you will
+  find the answer, to see it you have to click. Please try to answer on you own before checking.
+- Full programs' codes are placed as attachments at the bottom of this page.
+- Codes, information and tasks are organized in logical sequence, in order to fully understand it you should follow this
+  sequence. Sometimes former task makes context for the next one and it is harder to comprehend it without the study of
+  previous parts.
+- Tasks assume that you can write C code at some basic level (you can use dynamic allocated memory, parse strings, and so on). If you feel confident with those operations, please consult with Programming 1 materials.
+- Most of the exercises require command line to practice, I usually assume that all the files are placed in the current
+  working folder and that we do not need to add path parts to file names.
+- Quite often you will find $ sign placed before commands you should run in the shell, obviously you do not need to
+  rewrite this sight to command line, I put it there to remind you that it is a command to execute.
+- What you learn and practice in this tutorial will be required for the next ones. If you have a problem with this
+  material after the graded lab you can still ask for help.
+{{< /hint >}}
+
 ## Task 1 - stdout
 
 Goal: Write and compile (using make program) the simplest program to write on the standard output.
@@ -517,11 +541,53 @@ The variable was set in the program process and, for a brief moment, in the shel
 After those processes have ended the variable vanished with them.
 {{< /expand >}}
 
+## Task 9 - error handling
+
+Goal: Modify program prog7.c to add append new environmental variables passed by user and then list all them all.
+
+What you need to know:
+- man 3p errno
+
+<em>code for <b>prog9.c</b> file:</em>
+{{< includecode "prog9.c" >}}
+
+Compile and run program in two ways:
+```shell
+$ ./prog9 VAR1 VAL1
+``` 
+```shell
+$ ./prog9 VA=R1 VAL1
+``` 
+
+Second run should finish with error.
+After reading `setenv` man page we can read, that environmental variable name cannot contain '=' sign.
+In this case function return `-1` and sets `errno` to `EINVAL` error code.
+
+It is common behaviour that system functions on error return special value and sets special variable `errno` with error code.
+It helps to find out what gone wrong during function call.
+When we know what this error code means in case of concrete function we can handle it specially.
+In sample code finishes with special error description.
+There are also cases when system function returning error shouldn't finish whole program.
+
+In every man page of system function there is **ERRORS** section. 
+I encourage you to read those section at all system function from this tutorial.
+Consider what error codes shouldn't lead to finishing program.
+
+What would happen, when we run program with only one argument?
+{{< expand "Answer" >}}  
+Program should finish at the beginning calling `usage` function.
+We cannot set environmental variable when we don't know its value.
+{{< /expand >}}
+
+Why variables added by code are listed inside last loop?
+{{< expand "Answer" >}} 
+Modifying environmental variables it's just editing `char **environ` variable.
+We can read in `man 3p setenv` that calling it modifies above variable.
+{{< /expand >}}
 
 ## The task for IDE testing
 
-Goal: Write a trivial program "hello world", compile it, run it, compress the source and copy to the required
-destination.
+Goal: Write a trivial program "hello world", compile and run it.
 
 *What student has to know:*
 - know one of available (in our labs) programmers environment for Linux
@@ -604,3 +670,7 @@ $ git push origin
 Please remember about sending your code to server as soon as possible.
 Access to server will be closed when laboratory finishes.
 Code can be graded if and only if it will be sent to this server.
+
+
+## Source codes presented in this tutorial
+{{% codeattachments %}}
