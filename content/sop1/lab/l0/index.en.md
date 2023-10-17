@@ -51,7 +51,7 @@ Introduction notes:
 - Codes, information and tasks are organized in logical sequence, in order to fully understand it you should follow this
   sequence. Sometimes former task makes context for the next one and it is harder to comprehend it without the study of
   previous parts.
-- Tasks assume that you can write C code at some basic level (you can use dynamic allocated memory, parse strings, and so on). If you feel confident with those operations, please consult with Programming 1 materials.
+- Tasks assume that you can write C code at some basic level (you can use dynamic allocated memory, parse strings, and so on). If you feel not confident with those operations, please consult with Programming 1 materials.
 - Most of the exercises require command line to practice, I usually assume that all the files are placed in the current
   working folder and that we do not need to add path parts to file names.
 - Quite often you will find $ sign placed before commands you should run in the shell, obviously you do not need to
@@ -653,7 +653,7 @@ Every pair of keys is unique to student and has to be used by only one student.
 
 First step on laboratory is copy remote repository to your local workstation with command 
 ```shell
-$ git clone ssh://gitolite@vl01/name_surname/l0en
+$ git clone ssh://gitolite@vl01/l0en/name_surname
 ```
 
 Command creates directory with name of repository and copies files to it.

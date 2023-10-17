@@ -681,7 +681,7 @@ W plikach na LeONie znajduje się również pusty plik postaci `imię_nazwisko.t
 Pierwszym krokiem będzie wykonanie kopii zdalnego repozytorium na swoją stację roboczą poleceniem
 
 ```shell
-$ git clone ssh://gitolite@vl01/imię_nazwisko/l0pl
+$ git clone ssh://gitolite@vl01/l0pl/imię_nazwisko
 ```
 
 Polecenie stworzy folder o nazwie `l0pl` i wykona do niego kopie plików.
