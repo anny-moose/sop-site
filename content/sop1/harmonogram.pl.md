@@ -15,7 +15,7 @@ Wtorki, godz. 16:15 - 18:00, s. 103
 | 31.10.2023 | [Procesy]({{< ref "wyk/w4" >}})                                                       |
 | 14.11.2023 | [Sygnały POSIX]({{< ref "wyk/w5" >}})                                                 |
 | 28.11.2023 | [Wątki. P-wątki i muteksy.]({{< ref "wyk/w6" >}})                                     |
-| 12.12.2024 | Synchronizacja                                                                        |
+| 12.12.2024 | [Synchronizacja]({{< ref "wyk/w7" >}})                                                |
 
 ## Zajęcia laboratoryjne
 

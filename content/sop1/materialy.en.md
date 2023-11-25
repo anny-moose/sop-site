@@ -11,7 +11,7 @@ date: 2022-02-10T10:00:00+01:00
 - [Lec4 - Processes.]({{< ref "wyk/w4" >}})
 - [Lec5 - POSIX signals.]({{< ref "wyk/w5" >}})
 - [Lec6 - Threads. P-threads and mutexes.]({{< ref "wyk/w6" >}})
-- Lec7 - Synchronization.
+- [Lec7 - Synchronization.]({{< ref "wyk/w7" >}})
 
 ## Laboratory reference
 

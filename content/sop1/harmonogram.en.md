@@ -15,7 +15,7 @@ Tuesdays, 8:15 - 10:00, room 103
 | 24.10.2023 | [Processes]({{< ref "wyk/w4" >}})                                        |
 | 31.10.2023 | [POSIX signals]({{< ref "wyk/w5" >}})                                    |
 | 7.11.2023  | [Threads. P-threads and mutexes.]({{< ref "wyk/w6" >}})                  |
-| 14.11.2023 | Synchronization                                                          |
+| 14.11.2023 | [Synchronization]({{< ref "wyk/w7" >}})                                  |
 
 ## Laboratories
 

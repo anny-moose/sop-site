@@ -11,7 +11,7 @@ date: 2022-02-10T10:00:00+01:00
 - [W4 - Procesy]({{< ref "wyk/w4">}})
 - [W5 - Procesy i sygnały POSIX]({{< ref "wyk/w5">}})
 - [W6 - Wątki. P-wątki i muteksy]({{< ref "wyk/w6">}})
-- W7 - Synchronizacja
+- [W7 - Synchronizacja]({{< ref "wyk/w7" >}})
 
 ## Opisy ćwiczeń laboratoryjnych
 
