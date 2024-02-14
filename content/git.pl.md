@@ -6,6 +6,14 @@ layout: single
 menu: sop1
 ---
 
+{{< hint info >}}
+
+Ta strona zawiera ogólne informacje o systemie GIT.
+Po jej przeczytaniu zobacz też [tutorial do L0 na SOP1]({{< ref "sop1/lab/l0#schemat-użycia-gita-na-laboratorium" >}}) w którym zostało omówione użycie GITa na laboratorium.
+
+{{< /hint >}}
+
+
 ## GIT - przykład rozproszonego systemu kontroli wersji
 
 System kontroli wersji ma za zadanie ułatwić programistom (ale nie tylko) śledzić zmiany w plikach oraz ułatwiać przez to współpracę.
@@ -138,3 +146,11 @@ Nie został tutaj poruszony temat gałęzi, łączenia zmian czy rozwiązywania 
 W praktyce są to bardzo popularne problemy, jednak zbyt złożone do opisania tutaj.
 Ta [książka](https://git-scm.com/book/en/v2) jest bardzo dobrym źródłem do zapoznania się z wieloma funkcjami GITa.
 Polecam szczególnie rozdział drugi jako uzupełnienie tego opisu.
+
+
+{{< hint info >}}
+
+Ta strona zawiera ogólne informacje o systemie GIT.
+Po jej przeczytaniu zobacz też [tutorial do L0 na SOP1]({{< ref "sop1/lab/l0#schemat-użycia-gita-na-laboratorium" >}}) w którym zostało omówione użycie GITa na laboratorium.
+
+{{< /hint >}}

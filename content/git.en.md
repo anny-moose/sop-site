@@ -6,6 +6,13 @@ layout: single
 menu: sop1
 ---
 
+{{< hint info >}}
+
+This page contains general information about GIT version control system.
+After reading it see also [OPS1 L0 tutorial]({{< ref "sop1/lab/l0#instruction-of-using-git-on-the-laboratory" >}}) which explains how GIT is used during laboratory.
+
+{{< /hint >}}
+
 ## GIT - example of distributed version control system
 
 Version control system (VCS) should help programmers (but not only) to track changes of files and help them to cooperate.
@@ -138,3 +145,10 @@ It doesn't cover branching, merging and resolving conflicts.
 Those problems are encountered in practice, but they are to complex to cover them here.
 This [book](https://git-scm.com/book/en/v2) is fantastic source to learn more functions of GIT.
 I recommend reading chapter 2 as supplement to this description.
+
+{{< hint info >}}
+
+This page contains general information about GIT version control system.
+After reading it see also [OPS1 L0 tutorial]({{< ref "sop1/lab/l0#instruction-of-using-git-on-the-laboratory" >}}) which explains how GIT is used during laboratory.
+
+{{< /hint >}}
