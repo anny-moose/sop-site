@@ -5,22 +5,20 @@ date: 2022-02-10T10:00:00+01:00
 
 ## Lecture reference
 
-- [Lec 1 Introduction to interprocess communication (IPC). IPC with pipes/FIFOs.]({{< ref "wyk/w1" >}})
-- [Lec 2 POSIX IPC: shared memory and message queues]({{< ref "wyk/w2" >}})
-- [Lec 3 Synchronization. Deadlocks.]({{< ref "wyk/w3" >}})
-- [Lec 4 POSIX synchronization.]({{< ref "wyk/w4" >}})
-- [Lec 5 Introduction to networking.]({{< ref "wyk/w5" >}})
-- [Lec 6 Sockets interface.]({{< ref "wyk/w6" >}})
-- [Lec 7 Network programming.]({{< ref "wyk/w7" >}})
-- [Lec 8 Networking security issues.]({{< ref "wyk/w8" >}})
-- [Lec 9 Management of operating memory.]({{< ref "wyk/w9" >}})
-- [Lec 10 Virtual memory.]({{< ref "wyk/w10" >}})
-- [Lec 11 File systems.]({{< ref "wyk/w11" >}})
-- [Lec 12 Implementations of file systems. Distributed file systems.]({{< ref "wyk/w12" >}})
-- [Lec 13 Real-time systems.]({{< ref "wyk/w13" >}})
-- [Lec 14 Protection and security.]({{< ref "wyk/w14" >}})
-- [T1 Test 1.]({{< ref "wyk/k1" >}})
-- [T2 Test 2.]({{< ref "wyk/k2" >}})
+- [Introduction to interprocess communication (IPC). IPC with pipes/FIFOs.]({{< ref "wyk/w1" >}})
+- [POSIX IPC: shared memory and message queues]({{< ref "wyk/w2" >}})
+- [Synchronization. Deadlocks.]({{< ref "wyk/w3" >}})
+- [POSIX synchronization.]({{< ref "wyk/w4" >}})
+- [Introduction to networking.]({{< ref "wyk/w5" >}})
+- [Sockets interface.]({{< ref "wyk/w6" >}})
+- [Network programming.]({{< ref "wyk/w7" >}})
+- [Networking security issues.]({{< ref "wyk/w8" >}})
+- [Management of operating memory.]({{< ref "wyk/w9" >}})
+- [Virtual memory.]({{< ref "wyk/w10" >}})
+- [File systems.]({{< ref "wyk/w11" >}})
+- [Implementations of file systems. Distributed file systems.]({{< ref "wyk/w12" >}})
+- [Real-time systems.]({{< ref "wyk/w13" >}})
+- [Protection and security.]({{< ref "wyk/w14" >}})
 
 ## Laboratory reference
 

@@ -7,25 +7,25 @@ Summer semester 2023/2024
 
 ## Lecture
 
-Wednesdays, 8:15-10:00, room 107
+Tuesdays, 10:15-12:00, room 328
 
-| Date  | Topic                                                                                                   |
-|-------|---------------------------------------------------------------------------------------------------------|
-| 22.02 | [Lec 1 	Introduction to interprocess communication (IPC). IPC with pipes/FIFOs]({{< ref "wyk/w1" >}}) |
-| 01.03 | [Lec 2 	POSIX IPC: shared memory and queues]({{< ref "wyk/w2" >}})                                    |
-| 08.03 | [Lec 3 	Synchronization. Deadlocks.]({{< ref "wyk/w3" >}})                                            |
-| 15.03 | [Lec 4 	POSIX synchronization]({{< ref "wyk/w4" >}})                                                  |
-| 22.03 | [Lec 5 	Introduction to networking]({{< ref "wyk/w5" >}})                                             |
-| 29.03 | [Lec 6 	Sockets interface]({{< ref "wyk/w6" >}})                                                      |
-| 05.04 | [Lec 7 	Network programming]({{< ref "wyk/w7" >}})                                                    |
-| 12.04 | [T1/1 	Test 1.]({{< ref "wyk/k1" >}}), [Lec8. Networking security issues]({{< ref "wyk/w8" >}})      |
-| 19.04 | [Lec 9 	Main memory management]({{< ref "wyk/w9" >}})                                                 |
-| 26.04 | [Lec 10 	Virtual memory]({{< ref "wyk/w10" >}})                                                        |
-| 10.05 | [Lec 11 	File systems]({{< ref "wyk/w11" >}})                                                          |
-| 17.05 | [Lec 12 	Implementations of file systems, Distributed file systems.]({{< ref "wyk/w12" >}})            |
-| 24.05 | [Lec 13 	Real-time systems.]({{< ref "wyk/w13" >}})                                                    |
-| 31.05 | [T2/1 	Test 2]({{< ref "wyk/k2" >}}),  [Lec14. Protection and security.]({{< ref "wyk/w14" >}})      |
-| 14.06 | **Lecture Tests Retakes**                                                                               |
+| Date  | Topic                                                                                          |
+|-------|------------------------------------------------------------------------------------------------|
+| 20.02 | [Introduction to interprocess communication (IPC). IPC with pipes/FIFOs]({{< ref "wyk/w1" >}}) |
+| 27.02 | [POSIX IPC: shared memory and queues]({{< ref "wyk/w2" >}})                                    |
+| 05.03 | [Low-level synchronization.]({{< ref "wyk/w3" >}})                                             |
+| 12.03 | [POSIX synchronization]({{< ref "wyk/w4" >}})                                                  |
+| 19.03 | [Deadlocks]({{< ref "wyk/w3" >}})                                                              |
+| 26.03 | [Introduction to TCP/IP networking]({{< ref "wyk/w5" >}})                                      |
+| 09.04 | [Sockets interface]({{< ref "wyk/w6" >}})                                                      |
+| 16.04 | [Network programming]({{< ref "wyk/w7" >}})                                                    |
+| 23.04 | **Test 1**, [Networking security issues]({{< ref "wyk/w8" >}})                           |
+| 07.05 | [Main memory management]({{< ref "wyk/w9" >}})                                                 |
+| 14.05 | [Virtual memory]({{< ref "wyk/w10" >}})                                                        |
+| 21.05 | [File systems]({{< ref "wyk/w11" >}})                                                          |
+| 28.05 | [Implementations of file systems, Distributed file systems.]({{< ref "wyk/w12" >}})            |
+| 04.06 | [Real-time systems.]({{< ref "wyk/w13" >}})                                                    |
+| 11.06 | **Test 2**,  [Protection and security.]({{< ref "wyk/w14" >}})                          |
 
 ## Laboratories
 
