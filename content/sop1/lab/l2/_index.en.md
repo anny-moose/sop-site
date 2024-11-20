@@ -48,30 +48,30 @@ Please notice that we do not test for errors inside of ERR macro (during error r
 action at minimal level at emergency exit. What else can we do ? Call ERR recursively and have the same errors again?
 
 Why after you run this program the command line returns immediately while processes are still working?
-{{< expand "Answer" >}} Parent process is not waiting for child processes, no wait or waitpid call. It will be fixed in the 2nd stage. {{< /expand >}}
+{{< details "Answer" >}} Parent process is not waiting for child processes, no wait or waitpid call. It will be fixed in the 2nd stage. {{< /details >}}
 
 How to check the current parent of the created sub-processes (after the initial parent quits)? Why this process?
-{{< expand "Answer" >}}  Right after the command line returns run: $ps -f, you should see that the PPID (parent PID) is 1 (init/systemd). It is caused by premature end of parent process, the orphaned processes can not "hang" outside of process three so they have to be attached somewhere. To make it simple, it is not the shell but the first process in the system. {{< /expand >}}
+{{< details "Answer" >}}  Right after the command line returns run: $ps -f, you should see that the PPID (parent PID) is 1 (init/systemd). It is caused by premature end of parent process, the orphaned processes can not "hang" outside of process three so they have to be attached somewhere. To make it simple, it is not the shell but the first process in the system. {{< /details >}}
 
 Random number generator seed is set in child process, can it be moved to parent process? Will it affect the program?
-{{< expand "Answer" >}} Child processes will get the same "random" numbers because they will have the same random seed. Seeding can not be moved to parent. {{< /expand >}}
+{{< details "Answer" >}} Child processes will get the same "random" numbers because they will have the same random seed. Seeding can not be moved to parent. {{< /details >}}
 
 Can we change the seed from PID to time() call?
-{{< expand "Answer" >}} No. Time you get from time() is returned in seconds since 1970, in most cases all sub-processes  will have the same seed and will get the same (not random) numbers. {{< /expand >}}
+{{< details "Answer" >}} No. Time you get from time() is returned in seconds since 1970, in most cases all sub-processes  will have the same seed and will get the same (not random) numbers. {{< /details >}}
 
 Try to derive a formula to get random number from the range [A,B], it should be obvious.
 
 How this program works if you remove the exit call in child code (right after child_work call)?
-{{< expand "Answer" >}} Child process after exiting the child_work will continue back into forking loop! It will start it's own children. Grandchildren can start their children and so on. To mess it up a bit more child processes do not wait for their children.  {{< /expand >}}
+{{< details "Answer" >}} Child process after exiting the child_work will continue back into forking loop! It will start it's own children. Grandchildren can start their children and so on. To mess it up a bit more child processes do not wait for their children.  {{< /details >}}
 
 How many processes will be started in above case if you supply 3 as starting parameter?
-{{< expand "Answer" >}}  1 parent 3 children,  3 grand children and 1 grand grand child, 8 in total, draw a process three for it, tag the branches with current (on fork) n value. {{< /expand >}}
+{{< details "Answer" >}}  1 parent 3 children,  3 grand children and 1 grand grand child, 8 in total, draw a process three for it, tag the branches with current (on fork) n value. {{< /details >}}
 
 What sleep returns? Should we react to this value somehow?
-{{< expand "Answer" >}} It returns the time left to sleep at the moment of interruption bu signal handling function. In this code child processes does not receive nor handle the signals so this interruption is not possible.  In other codes it may be vital to restart sleep with remaining time. {{< /expand >}}
+{{< details "Answer" >}} It returns the time left to sleep at the moment of interruption bu signal handling function. In this code child processes does not receive nor handle the signals so this interruption is not possible.  In other codes it may be vital to restart sleep with remaining time. {{< /details >}}
 
 In the next stage child waiting and child counting will be added. How can we know how many child processes have exited?
-{{< expand "Answer" >}} SIGCHLD counting will not be precise as signals can marge, the only sure method is to count successful calls to wait or waitpid. {{< /expand >}}
+{{< details "Answer" >}} SIGCHLD counting will not be precise as signals can marge, the only sure method is to count successful calls to wait or waitpid. {{< /details >}}
 
 <em>solution 2nd stage <b>prog13b.c</b>:</em>
 {{< includecode "prog13b.c" >}}
@@ -79,19 +79,19 @@ In the next stage child waiting and child counting will be added. How can we kno
 It is worth knowing that waitpid can tell us about temporary lack of terminated children (returns zero) and about permanent lack of them (error ECHILD). The second case is not a critical error, your code should expect it.
 
 Why waitpid is in a loop?
-{{< expand "Answer" >}} we do not know how many zombie processes are there to collect,  it can be from zero to n of them. {{< /expand >}}
+{{< details "Answer" >}} we do not know how many zombie processes are there to collect,  it can be from zero to n of them. {{< /details >}}
 
 Why waitpid has the WNOHANG flag on?
-{{< expand "Answer" >}} we do not want to wait for alive child processes as we have to report the counter every 3 sec. to the user {{< /expand >}}
+{{< details "Answer" >}} we do not want to wait for alive child processes as we have to report the counter every 3 sec. to the user {{< /details >}}
 
 Why zero in place of pid in waitpid call?
-{{< expand "Answer" >}} We want to wait for any child process, we do not need to know children pids, zero means any of them. {{< /expand >}}
+{{< details "Answer" >}} We want to wait for any child process, we do not need to know children pids, zero means any of them. {{< /details >}}
 
 Does this program encounter signals? 
-{{< expand "Answer" >}} Yes - SIGCHILD. there is no handling routine but in this case it's alright, children are handled promptly by the above loop. {{< /expand >}}
+{{< details "Answer" >}} Yes - SIGCHILD. there is no handling routine but in this case it's alright, children are handled promptly by the above loop. {{< /details >}}
 
 Shouldn't we check sleep return value as we have signals in this code?
-{{< expand "Answer" >}} No, as we do not handle them. {{< /expand >}}
+{{< details "Answer" >}} No, as we do not handle them. {{< /details >}}
 
 ## Task 2 - signals
 
@@ -162,10 +162,10 @@ structure (quite often only part of members is described in man page, internally
 SIGCHLD handling function has a very similar code to what you have seen in first stage.
 
 Do we expect more than one terminated child during SIGCHLD handling?
-{{< expand "Answer" >}} Yes, signals can merge, another child can terminate at the very moment of signal handling. {{< /expand >}}
+{{< details "Answer" >}} Yes, signals can merge, another child can terminate at the very moment of signal handling. {{< /details >}}
 
 Do we expect zero terminated children at this handler? See ahead at the end of main.
-{{< expand "Answer" >}} Yes,  wait at the end of main can catch the child before SIGCHLD function does, then the function is left with zero children.It is a race condition.  {{< /expand >}}
+{{< details "Answer" >}} Yes,  wait at the end of main can catch the child before SIGCHLD function does, then the function is left with zero children.It is a race condition.  {{< /details >}}
 
 <em>solution <b>prog14.c</b>:</em>
 {{< includecode "prog14.c" >}}
@@ -181,28 +181,28 @@ questions below. Always plan in advance the reactions to signals in your program
 overlook the problem.
 
 Why sleep is in a loop, can the sleep time be exact in this case?
-{{< expand "Answer" >}} It gets interrupted by signal hadling, restart is a must. Sleep returns the remaining time rounded up to seconds so it can not be precise. {{< /expand >}}
+{{< details "Answer" >}} It gets interrupted by signal hadling, restart is a must. Sleep returns the remaining time rounded up to seconds so it can not be precise. {{< /details >}}
 
 What is default  disposition of most of the signals (incl. SIGUSR1 and 2)?
-{{< expand "Answer" >}} Most not handled signals will kill the receiver. In this example the lack of handling, ignoring  or blocking of SIGUSR1 and 2 would kill the children. {{< /expand >}}
+{{< details "Answer" >}} Most not handled signals will kill the receiver. In this example the lack of handling, ignoring  or blocking of SIGUSR1 and 2 would kill the children. {{< /details >}}
 
 How sending of SIGUSR1 and 2 to the process group affects the program?
-{{< expand "Answer" >}} Parent process has to be immune to them, the simplest solution is to ignore them. {{< /expand >}}
+{{< details "Answer" >}} Parent process has to be immune to them, the simplest solution is to ignore them. {{< /details >}}
 
 What would happen if you turn this ignoring off?
-{{< expand "Answer" >}} Parent would kill itself with first signal sent. {{< /expand >}} 
+{{< details "Answer" >}} Parent would kill itself with first signal sent. {{< /details >}} 
 
 Can we shift the signal ignoring setup past the create_children? Child processes set their own signal disposition right at the start, do they need this ignoring?
-{{< expand "Answer" >}} They do need it, if you shift the setup and there is no ignoring inherited from the parent process it may happen (rare case but possible) that child process gets created but didn't start its code yet. Immediately after the creation, CPU slice goes to the parent that continues its code and sends the SIGUSR1 signal to the children. If then CPU slice goes back to the child, signal default disposition will kill it before it has a chance to set up its own handler! {{< /expand >}}
+{{< details "Answer" >}} They do need it, if you shift the setup and there is no ignoring inherited from the parent process it may happen (rare case but possible) that child process gets created but didn't start its code yet. Immediately after the creation, CPU slice goes to the parent that continues its code and sends the SIGUSR1 signal to the children. If then CPU slice goes back to the child, signal default disposition will kill it before it has a chance to set up its own handler! {{< /details >}}
 
 Can we modify this program to avoid ignoring in the code?
-{{< expand "Answer" >}} In this program both child and a parent can have the same signal handling routines for SIGUSR1 and 2, you can set it just before fork and it will solve the problem. {{< /expand >}}
+{{< details "Answer" >}} In this program both child and a parent can have the same signal handling routines for SIGUSR1 and 2, you can set it just before fork and it will solve the problem. {{< /details >}}
 
 Would shifting the setup of SIGCHLD handler past the fork change the program? 
-{{< expand "Answer" >}} If one of offspring "dies" very quickly (before parent sets its SIGCHLD handler) it will be a zombi until another offspring terminates. It is not a mayor mistake but it's worth attention. {{< /expand >}}
+{{< details "Answer" >}} If one of offspring "dies" very quickly (before parent sets its SIGCHLD handler) it will be a zombi until another offspring terminates. It is not a mayor mistake but it's worth attention. {{< /details >}}
 
 Is wait call at the end of parent really needed? Parent waits long enough for children to finish, right?
-{{< expand "Answer" >}} Calculated time may not suffice, in overloaded system expect lags of any duration (few seconds and more), without "wait" children can terminate after the parent because of those lags. {{< /expand >}}
+{{< details "Answer" >}} Calculated time may not suffice, in overloaded system expect lags of any duration (few seconds and more), without "wait" children can terminate after the parent because of those lags. {{< /details >}}
 
 ## Task 3 - signal waiting
 
@@ -244,16 +244,16 @@ When above method is in use you can stop worrying about asynchronous codes, they
 more data types for communication via globals and have longer signal handlers.
 
 Which counter gets skewed? Parent's or child's?
-{{< expand "Answer" >}} It must be the slower one, program can not count not sent signals, it can only lose some. Only the receiver can miss some of the signal thus the problem is in the parent process. {{< /expand >}}
+{{< details "Answer" >}} It must be the slower one, program can not count not sent signals, it can only lose some. Only the receiver can miss some of the signal thus the problem is in the parent process. {{< /details >}}
 
 Why counters are shifted?
-{{< expand "Answer" >}} You probably blame signal merging but it has small chance to make any impact. The source of the problem is within sigsuspend as THERE IS NO GUARANTEE THAT DURING ONE CALL TO IT ONLY ONE SIGNAL WILL BE HANDLED! It is a very common misconception! Right after program executes the handler for SIGUSR2 in the duration of the same sigsuspend it executes the handler for SIGUSR1, global variable gets overwritten and parent process has no chance to count the SIGUSR2!   {{< /expand >}}
+{{< details "Answer" >}} You probably blame signal merging but it has small chance to make any impact. The source of the problem is within sigsuspend as THERE IS NO GUARANTEE THAT DURING ONE CALL TO IT ONLY ONE SIGNAL WILL BE HANDLED! It is a very common misconception! Right after program executes the handler for SIGUSR2 in the duration of the same sigsuspend it executes the handler for SIGUSR1, global variable gets overwritten and parent process has no chance to count the SIGUSR2!   {{< /details >}}
 
 How can we run the program to lower SIGUSR2 merging chances to zero and still observe skewed counter?
-{{< expand "Answer" >}} Run with short brakes between signals and lots of SIGUSR1 between SIGUSR2. Now SIGUSR2 are very unlikely to merge as signals are separated in time by a lot of SIGUSR1, short brakes between signals rises the chance to have multiple handlers run in one sigsuspend. {{< /expand >}}
+{{< details "Answer" >}} Run with short brakes between signals and lots of SIGUSR1 between SIGUSR2. Now SIGUSR2 are very unlikely to merge as signals are separated in time by a lot of SIGUSR1, short brakes between signals rises the chance to have multiple handlers run in one sigsuspend. {{< /details >}}
 
 Correct the above program to eliminate the above problem.
-{{< expand "Answer" >}} You can have a dedicated global variable only for SIGUSR2, increasing of the counter of SIGUSR2 can run in handler itself it will eliminate the problem of multiple SIGUSR2 handler call in one sigsuspend. Modify the counter printout and it is ready. {{< /expand >}}
+{{< details "Answer" >}} You can have a dedicated global variable only for SIGUSR2, increasing of the counter of SIGUSR2 can run in handler itself it will eliminate the problem of multiple SIGUSR2 handler call in one sigsuspend. Modify the counter printout and it is ready. {{< /details >}}
 
 ## Task 4 - low level file access and signals
 
@@ -291,34 +291,34 @@ representation is well recognized by programmers and administrators it can also 
 considered as "magic number" style mistake. It is fairly easy to trace those constants in the code.
 
 Obviously the parent counts less signals than child sends, as summing runs inside the handler we can only blame merging for it. Can you tell why signal merging is so strong in this code?
-{{< expand "Answer" >}} In this architecture (GNU/Linux) CPU planer blocks signals during IO operations (to some size as we can see) and  during IO signals have more time to merge. {{< /expand >}}
+{{< details "Answer" >}} In this architecture (GNU/Linux) CPU planer blocks signals during IO operations (to some size as we can see) and  during IO signals have more time to merge. {{< /details >}}
 
 What for the SIGUSR1 is sent to the process group at the end of the parent process?
-{{< expand "Answer" >}} To terminate the child. {{< /expand >}}
+{{< details "Answer" >}} To terminate the child. {{< /details >}}
 
 How come it works? SIGUSR1 handling is inherited from the parent?
-{{< expand "Answer" >}} Child first action is to restore default signal disposition - killing of the receiver. {{< /expand >}}
+{{< details "Answer" >}} Child first action is to restore default signal disposition - killing of the receiver. {{< /details >}}
 
 Why parent does not kill itself with this signal?
-{{< expand "Answer" >}} It sets the handler for SIGUSR1 before it sends it to the group. {{< /expand >}}
+{{< details "Answer" >}} It sets the handler for SIGUSR1 before it sends it to the group. {{< /details >}}
 
 Can this strategy fail?
-{{< expand "Answer" >}} Yes, if parent process finishes it's job before child is able to even start the code and reset SIGUSR1 disposition. {{< /expand >}}
+{{< details "Answer" >}} Yes, if parent process finishes it's job before child is able to even start the code and reset SIGUSR1 disposition. {{< /details >}}
 
 Can you improve it and at the same time not kill the parent with the signal from a child?
-{{< expand "Answer" >}} send SIGUSR2 to the child. {{< /expand >}} 
+{{< details "Answer" >}} send SIGUSR2 to the child. {{< /details >}} 
 
 Is this child (children) termination strategy  easy and correct at the same time in all possible programs?
-{{< expand "Answer" >}} Only if child processe does not have resources to release, if it has something to release you must add proper signal handling and this may be complicated. {{< /expand >}}
+{{< details "Answer" >}} Only if child processe does not have resources to release, if it has something to release you must add proper signal handling and this may be complicated. {{< /details >}}
 
 Why to check if a pointer to newly allocated memory is not null?
-{{< expand "Answer" >}} Operating system may not be able to grant your program additional memory, in this case it reports the error with the NULL. You must be prepared for it. The lack of this check is a common students' mistake. {{< /expand >}}
+{{< details "Answer" >}} Operating system may not be able to grant your program additional memory, in this case it reports the error with the NULL. You must be prepared for it. The lack of this check is a common students' mistake. {{< /details >}}
 
 Can you turn the allocated buffer into automatic variable and avoid the effort of allocating and releasing the memory?
-{{< expand "Answer" >}} I don't know about OS architecture that uses stacks large enough to accommodate 40MB, typical stack has a few MB at most. For smaller buffers (a few KB) it can work. {{< /expand >}}  
+{{< details "Answer" >}} I don't know about OS architecture that uses stacks large enough to accommodate 40MB, typical stack has a few MB at most. For smaller buffers (a few KB) it can work. {{< /details >}}  
 
 Why permissions of a newly created file are supposed to be full (0777)? Are they really full?
-{{< expand "Answer" >}} umask will reduce the permissions, if no set  permissions are required it is a good idea to allow the umask to regulate the effective rights {{< /expand >}}
+{{< details "Answer" >}} umask will reduce the permissions, if no set  permissions are required it is a good idea to allow the umask to regulate the effective rights {{< /details >}}
 
 <em>solution 2nd stage, parts of <b>prog16b.c</b>:</em>
 {{< includecode "prog16b.c" >}}
@@ -326,19 +326,19 @@ Why permissions of a newly created file are supposed to be full (0777)? Are they
 Run it with the same parameters as before - flaws are gone now.
 
 What error code  EINTR represents?
-{{< expand "Answer" >}} This is not an error, it is a way for OS to inform the program that the signal handler has been invoked {{< /expand >}}
+{{< details "Answer" >}} This is not an error, it is a way for OS to inform the program that the signal handler has been invoked {{< /details >}}
 
 How should you react to EINTR?
-{{< expand "Answer" >}} Unlike real errors do not exit the program, in most cases  to recover the problem simply restart the interrupted function with the same set of parameters as in initial call. {{< /expand >}}
+{{< details "Answer" >}} Unlike real errors do not exit the program, in most cases  to recover the problem simply restart the interrupted function with the same set of parameters as in initial call. {{< /details >}}
 
 At what stage functions are interrupted if EINTR is reported
-{{< expand "Answer" >}} Only before they start doing their job - in waiting stage. This means that you can safely restart with the same arguments all the functions used in OPS tutorials except "connect" (OPS2 sockets) {{< /expand >}} 
+{{< details "Answer" >}} Only before they start doing their job - in waiting stage. This means that you can safely restart with the same arguments all the functions used in OPS tutorials except "connect" (OPS2 sockets) {{< /details >}} 
 
 What are other types of interruption signal handler can cause?
-{{< expand "Answer" >}} IO transfer can be interrupted in the middle, this case is not reported with EINTR. Sleep and nanosleep similar. In both cases restarting can not reuse the same parameters, it gets complicated. {{< /expand >}}
+{{< details "Answer" >}} IO transfer can be interrupted in the middle, this case is not reported with EINTR. Sleep and nanosleep similar. In both cases restarting can not reuse the same parameters, it gets complicated. {{< /details >}}
 
 How do you know what function cat report EINTR?
-{{< expand "Answer" >}}  Read man pages, error sections. It easy to guess those function must wait before they do their job. {{< /expand >}}
+{{< details "Answer" >}}  Read man pages, error sections. It easy to guess those function must wait before they do their job. {{< /details >}}
 
 Analyze how bulk_read and bulk_write work. You should know what cases are recognized in those functions, what types of interruption they can handle, how to recognize EOF on the descriptor.
 Unlike during L1 lab, during L2 and following labs you have to use these functions (or similar ones) when calling `read` or `write` (because we use signals now).

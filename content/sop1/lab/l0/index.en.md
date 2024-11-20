@@ -81,21 +81,21 @@ Make sure that you mostly use POSIX pages (section 3p) rather than the Linux/GNU
 write Linux specific code.
 
 How you can find documentation on man command?
-{{< expand "Answer" >}}
+{{< details "Answer" >}}
 ```shell
 man man
 ```
-{{< /expand >}} 
+{{< /details >}} 
 
 If you use your own system to practice make sure you have POSIX man pages installed. 
 If not, search google on how to install them in your Linux distribution and do it.
 
 Why `man printf` will not help you to understand the `printf` function?
-{{< expand "Answer" >}} 
+{{< details "Answer" >}} 
 If you do not specify the section, man system opens the lowest number section on given topic.
 In this case it opens section 1 on printf program (used in bash). You have to supply section number: `man 3 printf`
 to see Linux/Gnu version or better `man 3p printf` to see POSIX version.
-{{< /expand >}}
+{{< /details >}}
 
 <em>solution <b>prog1.c</b>:</em>
 {{< includecode "prog1.c" >}}
@@ -113,15 +113,15 @@ Instead of using numbers to return statuses (zero - success, everything else fai
 it is better to use macros predefined in stdlib.h: `EXIT_SUCCESS` and `EXIT_FAILURE`.
 
 How do we know what header files to include in this program?
-{{< expand "Answer" >}} `stdio.h` from `man 3 printf`, `stdlib.h` for status macros 
-{{< /expand >}}
+{{< details "Answer" >}} `stdio.h` from `man 3 printf`, `stdlib.h` for status macros 
+{{< /details >}}
 
 Compile the code with `make prog1`, it will deploy standard GNU make compilation template. Run the program.
 
 Why this compilation method is not good enough?
-{{< expand "Answer" >}}
+{{< details "Answer" >}}
 Lack of `-Wall` flag, you will not see the code warnings. 
-{{< /expand >}}
+{{< /details >}}
 
 <em>solution <b>Makefile</b></em>
 ```makefile
@@ -141,30 +141,30 @@ Regular (not phony) targets must produce files of the same name as the target na
 it is a common problem among students to not replace all the names when making copy of the makefile.
 
 How can you remove the old executable with this Makefile?
-{{< expand "Answer" >}}
+{{< details "Answer" >}}
 ```shell
 make clean
 ```
-{{< /expand >}}
+{{< /details >}}
 
 How can you compile the code with this Makefile?
-{{< expand "Answer" >}}
+{{< details "Answer" >}}
 `make` or `make prog1`
-{{< /expand >}}
+{{< /details >}}
 
 How can you redirect the output of this program to the file?
-{{< expand "Answer" >}}
+{{< details "Answer" >}}
 ```shell
 ./prog1 > file.txt
 ```
-{{< /expand >}}
+{{< /details >}}
 
 How to display this file?
-{{< expand "Answer" >}}
+{{< details "Answer" >}}
 ```shell
 cat file.txt
 ```
-{{< /expand >}}
+{{< /details >}}
 
 Make the copy of the source file, name it prog1b.c. Modify the Makefile so that it can compile this new source file to the binary named prog1b.
 Make sure that the compilation is in deed using -Wall flag (it must be printed on the screen during compilation). 
@@ -204,21 +204,21 @@ printf("Hello %s\n", name);
 - Run and test this program. 
 
 Why `scanf` reads up to 21 characters (`%21s`)?
-{{< expand "Answer" >}}
+{{< details "Answer" >}}
 If you limit it to 20 you will never know if user entered exactly 20 characters, or maybe he tried to enter more than the limit. 
-{{< /expand >}}
+{{< /details >}}
 
 Why we declare 22 chars sized array while storing at most 21 chars?
-{{< expand "Answer" >}} 
+{{< details "Answer" >}} 
 In C all strings must end with zero code char.
 scanf will add this terminator.
 We must provide an array that can accommodate all the chars plus the terminating zero.
-{{< /expand >}}
+{{< /details >}}
 
 How can you run this program to hide error message from the screen?
-{{< expand "Answer" >}} 
+{{< details "Answer" >}} 
 You can redirect stderr to `/dev/null`, e.g.: `./prog2 2>/dev/null`
-{{< /expand >}}
+{{< /details >}}
 
 When you provide too long name message "Name too long: Success" shows up. Why success? Variable errno is not set in case
 of errors in our code, ERR is coded to work on errno value, it is meant for system and library functions.
@@ -291,28 +291,28 @@ clean:
 ```
 
 Compile and run the program with above Makefile, how can you compile only one target at a time?
-{{< expand "Answer" >}}
+{{< details "Answer" >}}
 ```shell
 make prog3
 ```
-{{< /expand >}} 
+{{< /details >}} 
 
 Check how this program works with 20 and 21 chars strings, explain the output.
-{{< expand "Answer" >}} 
+{{< details "Answer" >}} 
 For 21 chars string array can not accommodate new line char, fgets truncates what can not fit the limit, 
 in this case it is only trailing new line. 
-{{< /expand >}} 
+{{< /details >}} 
 
 Why can we observe the welcoming messages in separated lines despite the fact that there is no new line in printf formatting string?
-{{< expand "Answer" >}} 
+{{< details "Answer" >}} 
 fgets reads strings with trailing new line (if it fits the limit) and there is no need to add the second one, 
 printf prints what is in the buffer including new lines.
-{{< /expand >}}
+{{< /details >}}
 
 Why buffer size id MAX_LINE+2?
-{{< expand "Answer" >}}
+{{< details "Answer" >}}
 It should accommodate string+new line+trailing zero marker.
-{{< /expand >}}
+{{< /details >}}
 
 - Please notice that fgets can work with any stream, not only the stdin.
 - This program is free from magic numbers, it should always be like that.
@@ -328,11 +328,11 @@ Tom
 Create text file with above content.
 
 How can you run the program in a such away that it will get the input from the file instead of the keyboard (two ways)?
-{{< expand "Answer 1" >}} 
+{{< details "Answer 1" >}} 
 redirect file to stdin: `./prog3 < dane.txt` 
-{{< /expand >}}
-{{< expand "Answer 2" >}} pipeline: `cat dane.txt | ./prog3`
-{{< /expand >}} 
+{{< /details >}}
+{{< details "Answer 2" >}} pipeline: `cat dane.txt | ./prog3`
+{{< /details >}} 
 
 ## Task 4 - program parameters 1
 
@@ -362,12 +362,12 @@ Zero argument is always the name of the binary itself!
 Compile, run and test this program with various parameters.
 
 How can you invoke `xargs` to have file dane.txt used as the source of parameters?
-{{< expand "Answer 1" >}} 
+{{< details "Answer 1" >}} 
 each word as separated argument: `cat dane.txt | xargs ./prog4` 
-{{< /expand >}}
-{{< expand "Answer 2" >}} 
+{{< /details >}}
+{{< details "Answer 2" >}} 
 each line as an argument: `cat dane.txt |tr "\n" "\0"| xargs -0 ./prog4`
-{{< /expand >}} 
+{{< /details >}} 
 
 When using xarg on larger files you must be aware that the command line length can be limited in OS. Xargs can split
 data and invoke the command several times if you use appropriate flag.
@@ -399,14 +399,14 @@ void usage(char *pname)
 Compile this program using universal Makefile from previous task.
 
 How this program works if you supply incorrect value as the parameter, explain why??
-{{< expand "Answer" >}}
+{{< details "Answer" >}}
 It prints nothing as atoi in Linux returns 0 if it can not convert the string to the integer.
-{{< /expand >}}
+{{< /details >}}
 
 Why argc has to be 3, we expect two arguments?
-{{< expand "Answer" >}}
+{{< details "Answer" >}}
 `argc` is a counter of elements stored in `argv` which is storing two arguments and a name of the binary (`argv[0]`). in total 3 elements.
-{{< /expand >}}
+{{< /details >}}
 
 Please notice the reverted notation (0==j), how can it help us? If by mistake you write (0=j) compiler will return an
 error, and you will know where the problem is. If you write (j=0) it will compile, and you will have some extra work
@@ -491,14 +491,14 @@ You can also store it in the shell environment: `export TVAR1='qwert'` and invok
 keep showing TVAR1 on the list.
 
 If you start another shell from the menu and run this program inside will it list the variable exported in the first one?
-{{< expand "Answer" >}}  
+{{< details "Answer" >}}  
 No, those two shells inherit variables from the program launcher and there is no "sideways" inheritance possible in UNIX. 
-{{< /expand >}}
+{{< /details >}}
 
 If I run the second shell from the first one and then run the program in 2nd one will it list the variable?
-{{< expand "Answer" >}}
+{{< details "Answer" >}}
 Yes, the second one inherits the environment with this variable from the first one as it is parent child relation of those two processes.
-{{< /expand >}}
+{{< /details >}}
 
 ## Task 8 - environmental variables 2
 
@@ -535,11 +535,11 @@ System can run without shell program. In such a case the system function will no
 Run the program with different values for variable TIMES
 
 How to check the RESULT value after the execution of the program? Will it be set?
-{{< expand "Answer" >}}
+{{< details "Answer" >}}
 `env|grep RESULT` - it will not show on the list. Changes in the environment are not propagated up the tree. 
 The variable was set in the program process and, for a brief moment, in the shell executed by system function. 
 After those processes have ended the variable vanished with them.
-{{< /expand >}}
+{{< /details >}}
 
 ## Task 9 - error handling
 
@@ -574,16 +574,16 @@ I encourage you to read those section at all system function from this tutorial.
 Consider what error codes shouldn't lead to finishing program.
 
 What would happen, when we run program with only one argument?
-{{< expand "Answer" >}}  
+{{< details "Answer" >}}  
 Program should finish at the beginning calling `usage` function.
 We cannot set environmental variable when we don't know its value.
-{{< /expand >}}
+{{< /details >}}
 
 Why variables added by code are listed inside last loop?
-{{< expand "Answer" >}} 
+{{< details "Answer" >}} 
 Modifying environmental variables it's just editing `char **environ` variable.
 We can read in `man 3p setenv` that calling it modifies above variable.
-{{< /expand >}}
+{{< /details >}}
 
 ## The task for IDE testing
 

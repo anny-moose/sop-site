@@ -32,19 +32,19 @@ Ograniczenie na współbieżne wątki może być narzucone za pomocą semafora P
 Warto samemu dokonać dokładnej analizy powyższego kodu pod kątem elementów nie omawianych tutaj, proszę to zrobić jako ćwiczenie.
 
 Czemu przed uruchomieniem wątku w serwerze alokujemy pamięć? Czy można się tej alokacji pozbyć z kodu?
-{{< expand "Answer" >}} Nie możemy użyć jednej wspólnej struktury bo na raz może być więcej niż jeden wątek roboczy. Można zrobić tablice FS_NUM struktur ale  trzeba by wtedy zarządzać wolnymi polami w tej tablicy a to oznacza trochę więcej kodu. Najłatwiej jest zaalokować pamięć dla tej struktury przed uruchomieniem wątku. Pamiętamy o zwolnieniu tej pamięci w wątku zanim się skończy. {{< /expand >}}
+{{< details "Answer" >}} Nie możemy użyć jednej wspólnej struktury bo na raz może być więcej niż jeden wątek roboczy. Można zrobić tablice FS_NUM struktur ale  trzeba by wtedy zarządzać wolnymi polami w tej tablicy a to oznacza trochę więcej kodu. Najłatwiej jest zaalokować pamięć dla tej struktury przed uruchomieniem wątku. Pamiętamy o zwolnieniu tej pamięci w wątku zanim się skończy. {{< /details >}}
 
 Gdzie jest odliczany czas?
-{{< expand "Answer" >}} W wątku roboczym, w tym celu go tworzymy. {{< /expand >}}
+{{< details "Answer" >}} W wątku roboczym, w tym celu go tworzymy. {{< /details >}}
 
 Czemu służy semafor?
-{{< expand "Answer" >}} Semafor odlicza ile jeszcze wątków można utworzyć aby na raz nie działało ich więcej niż FS_NUM (10). Na początek jego wartość to 10, przed utworzeniem kolejnego wątku zmniejszamy wartość semafora. Zanim wątek skończy zwiększa tą wartość. Jeśli wartość semafora jest zerowa to nie da się już utworzyć kolejnego wątku. {{< /expand >}}
+{{< details "Answer" >}} Semafor odlicza ile jeszcze wątków można utworzyć aby na raz nie działało ich więcej niż FS_NUM (10). Na początek jego wartość to 10, przed utworzeniem kolejnego wątku zmniejszamy wartość semafora. Zanim wątek skończy zwiększa tą wartość. Jeśli wartość semafora jest zerowa to nie da się już utworzyć kolejnego wątku. {{< /details >}}
 
 Czemu przed utworzeniem kolejnego wątku roboczego w programie używamy sem_trywait? Co się stanie gdy zamienimy to na sem_wait?
-{{< expand "Answer" >}} Robimy tak, aby od razu zorientować się, że wyczerpaliśmy limit wątków. Gdyby zastąpić trywait wait'em to program poczekałby aż się zwolni jakiś wątek i dopiero wtedy obsłużyłby zadanie, ale to oznacza, że czas odliczony dla tego zadania byłby dłuższy niż użytkownik żądał! {{< /expand >}}
+{{< details "Answer" >}} Robimy tak, aby od razu zorientować się, że wyczerpaliśmy limit wątków. Gdyby zastąpić trywait wait'em to program poczekałby aż się zwolni jakiś wątek i dopiero wtedy obsłużyłby zadanie, ale to oznacza, że czas odliczony dla tego zadania byłby dłuższy niż użytkownik żądał! {{< /details >}}
 
 Co powoduje limitowanie ustawionych alarmów do 5 naraz?
-{{< expand "Answer" >}} Semafor, zerknij na 2 powyższe pytania i odpowiedzi. {{< /expand >}}
+{{< details "Answer" >}} Semafor, zerknij na 2 powyższe pytania i odpowiedzi. {{< /details >}}
 
 ## Threads pool - conditional variables
 Original author: **Jerzy Bartuszek**
@@ -57,40 +57,40 @@ Napisz prosty program, który czyta z "/dev/urandom" i zapisuje jego zawartość
 Warto samemu dokonać dokładnej analizy powyższego kodu pod kątem elementów nie omawianych tutaj, proszę to zrobić jako ćwiczenie.
 
 Czy warunek dla zmiennej warunkowej może być oparty o jedną zwykłą zmienna?
-{{< expand "Answer" >}} Tak. {{< /expand >}}
+{{< details "Answer" >}} Tak. {{< /details >}}
 
 Czy warunek dla zmiennej warunkowej może być oparty na wartościach kilku zmiennych w programie?
-{{< expand "Answer" >}} Tak. {{< /expand >}}
+{{< details "Answer" >}} Tak. {{< /details >}}
 
 Czy warunek dla zmiennej warunkowej może być oparty na zawartości pliku?
-{{< expand "Answer" >}} Tak. {{< /expand >}}
+{{< details "Answer" >}} Tak. {{< /details >}}
 
 Czy warunek dla zmiennej warunkowej może być oparty na istnieniu pliku?
-{{{< expand "Answer" >}} Tak. {{< /expand >}}
+{{{< details "Answer" >}} Tak. {{< /details >}}
 
 Jak można ogólnie określić na czym może być oparty warunek zmiennej warunkowej
-{{< expand "Answer" >}} Warunek może być absolutnie dowolny, to kod napisany przez programistę o tym decyduję więc granicą tego czym może być warunek jest tylko wyobraźnia kodującego. {{< /expand >}}
+{{< details "Answer" >}} Warunek może być absolutnie dowolny, to kod napisany przez programistę o tym decyduję więc granicą tego czym może być warunek jest tylko wyobraźnia kodującego. {{< /details >}}
 
 Czy zmienna warunkowa może być użyta bez żadnego warunku?
-{{< expand "Answer" >}} Tak, jest wtedy zwykłą pulą czekających wątków które możemy wybudzać pojedynczo lub wszystkie naraz. {{< /expand >}}
+{{< details "Answer" >}} Tak, jest wtedy zwykłą pulą czekających wątków które możemy wybudzać pojedynczo lub wszystkie naraz. {{< /details >}}
 
 Co chroni muteks związany z zmienną warunkowa?
-{{< expand "Answer" >}} Muteks ma chronić dostęp do tych elementów programu (zmiennych, plików itd.) które są testowane w warunku zmiennej warunkowej. Chodzi o to, aby w czasie sprawdzania warunku zmiennej (zablokowania muteksu) mieć pewność, że warunek ten nie zostanie zmodyfikowany. {{< /expand >}}
+{{< details "Answer" >}} Muteks ma chronić dostęp do tych elementów programu (zmiennych, plików itd.) które są testowane w warunku zmiennej warunkowej. Chodzi o to, aby w czasie sprawdzania warunku zmiennej (zablokowania muteksu) mieć pewność, że warunek ten nie zostanie zmodyfikowany. {{< /details >}}
 
 Czy jeden muteks może chronić więcej niż jedną zmienna warunkową?
-{{< expand "Answer" >}} Może, ale proszę pamiętaj o wydajności programu, takie rozwiązanie ograniczy też równoległość. {{< /expand >}}
+{{< details "Answer" >}} Może, ale proszę pamiętaj o wydajności programu, takie rozwiązanie ograniczy też równoległość. {{< /details >}}
 
 Co wchodzi w skład zmiennej warunkowej w powyższym programie?
-{{< expand "Answer" >}} Warunek jest oparty wyłącznie o zmienną "condition", do której wątki mają dostęp poprzez wskaźniki. {{< /expand >}}
+{{< details "Answer" >}} Warunek jest oparty wyłącznie o zmienną "condition", do której wątki mają dostęp poprzez wskaźniki. {{< /details >}}
 
 Jak działa warunek zmiennej w tym programie?
-{{< expand "Answer" >}} Gdy główny przyjmie nowe żądanie ustawia zamienną "condition" na 1 i budzi jeden z wątków czekających. Obudzony wątek jeśli widzi, że "condition==1" i obsługuje żądanie. {{< /expand >}}
+{{< details "Answer" >}} Gdy główny przyjmie nowe żądanie ustawia zamienną "condition" na 1 i budzi jeden z wątków czekających. Obudzony wątek jeśli widzi, że "condition==1" i obsługuje żądanie. {{< /details >}}
 
 Który wątek powinien sprawdzić, że warunek zmiennej jest spełniony? Budzący czy obudzony?
-{{< expand "Answer" >}} Warunek musi zawsze być sprawdzony przez wątek budzony, nie ma gwarancji że będzie on spełniony nawet jeśli wątek budzący go sprawdzał ponieważ muteks który blokuje zmianę warunku musi być na chwilę zwolniony pomiędzy wysłaniem prośby o obudzenie a samym obudzeniem. Jeśli w tym czasie muteks zostałby przejęty przez inny wątek to warunek może ulec zmianie! Dobrze jeśli wątek budzący sprawdzi warunek ale jeśli nie może tego zrobić bo nie ma dostępu do wszystkich składowych warunku to można ten krok pominąć. {{< /expand >}}
+{{< details "Answer" >}} Warunek musi zawsze być sprawdzony przez wątek budzony, nie ma gwarancji że będzie on spełniony nawet jeśli wątek budzący go sprawdzał ponieważ muteks który blokuje zmianę warunku musi być na chwilę zwolniony pomiędzy wysłaniem prośby o obudzenie a samym obudzeniem. Jeśli w tym czasie muteks zostałby przejęty przez inny wątek to warunek może ulec zmianie! Dobrze jeśli wątek budzący sprawdzi warunek ale jeśli nie może tego zrobić bo nie ma dostępu do wszystkich składowych warunku to można ten krok pominąć. {{< /details >}}
 
 Czemu służy cleanup handler w wątku roboczym?
-{{< expand "Answer" >}} Bardzo ważne jest, aby wątek nie zakończył się nie zwolniwszy muteksu chroniącego zmienna warunkową, to zablokowałoby całą aplikację. Ten handler w razie awaryjnego wyjścia zwolni muteks. {{< /expand >}}
+{{< details "Answer" >}} Bardzo ważne jest, aby wątek nie zakończył się nie zwolniwszy muteksu chroniącego zmienna warunkową, to zablokowałoby całą aplikację. Ten handler w razie awaryjnego wyjścia zwolni muteks. {{< /details >}}
 
 ## Dice game - barrier
 
@@ -102,13 +102,13 @@ Reprezentuj każdego gracza za pomocą wątku i użyj bariery do synchronizacji 
 {{< includecode "prog23.c" >}}
 
 Jak działa bariera w tym programie?
-{{< expand "Answer" >}} Jest używana do synchronizacji wątków w dwóch kluczowych punktach w funkcji wątku. Bariera zapewnia, że wszystkie uczestniczące wątki osiągną określony punkt swojego wykonania, zanim którykolwiek z nich wznowi działanie. Bariera jest inicjowana z liczbą PLAYER_COUNT, co oznacza, że zablokuje się, dopóki PLAYER_COUNT wątków nie wywoła pthread_barrier_wait. {{< /expand >}}
+{{< details "Answer" >}} Jest używana do synchronizacji wątków w dwóch kluczowych punktach w funkcji wątku. Bariera zapewnia, że wszystkie uczestniczące wątki osiągną określony punkt swojego wykonania, zanim którykolwiek z nich wznowi działanie. Bariera jest inicjowana z liczbą PLAYER_COUNT, co oznacza, że zablokuje się, dopóki PLAYER_COUNT wątków nie wywoła pthread_barrier_wait. {{< /details >}}
 
 Które części funkcji wątku są wywoływane współbieżnie?
-{{< expand "Answer" >}} Każdy wątek niezależnie rzuca sześcienną kością, a wyniki są przechowywane w tablicy args->rolls. Ten fragment kodu jest wykonywany równocześnie przez wszystkie wątki. {{< /expand >}}
+{{< details "Answer" >}} Każdy wątek niezależnie rzuca sześcienną kością, a wyniki są przechowywane w tablicy args->rolls. Ten fragment kodu jest wykonywany równocześnie przez wszystkie wątki. {{< /details >}}
 
 Jak jest wybierany wątek jednego gracza do posumowania rundy?
-{{< expand "Answer" >}} pthread_barrier_wait zwraca PTHREAD_BARRIER_SERIAL_THREAD tylko dla jednego wątku (standard nie określa, który to wątek), a dla innych wątków zwraca 0. Ten mechanizm zapewnia, że akcja jest wykonywana tylko przez jeden wątek w każdej rundzie, uniemożliwiając wielokrotne równoczesne wykonanie tego samego kodu, który powinien być wykonany tylko raz. {{< /expand >}}
+{{< details "Answer" >}} pthread_barrier_wait zwraca PTHREAD_BARRIER_SERIAL_THREAD tylko dla jednego wątku (standard nie określa, który to wątek), a dla innych wątków zwraca 0. Ten mechanizm zapewnia, że akcja jest wykonywana tylko przez jeden wątek w każdej rundzie, uniemożliwiając wielokrotne równoczesne wykonanie tego samego kodu, który powinien być wykonany tylko raz. {{< /details >}}
 
 Wykonaj przykładowe <a href="{{< ref "/sop1/lab/l4/example1" >}}">ćwiczenie</a>. To zadanie szacuję na 150 minut, jeśli wyrobisz się w tym czasie to znaczy, że jesteś dobrze przygotowany/a  do zajęć. Pamiętaj, że w aktualnym układzie zajęć będzie dane zadanie na około 120 minut, więc trochę mniej pracochłonne.
 

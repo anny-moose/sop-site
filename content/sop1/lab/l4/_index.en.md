@@ -36,16 +36,16 @@ Limit on concurrent threads can be imposed with POSIX semaphore.
 It is worth of your time to analyze the above code in aspects not covered here (thread, mutex), please do it as an exercise.
 
 Why it is necessary to allocate memory before we start the thread, can this be avoided?
-{{< expand "Answer" >}} One common structure is not enough as each thread has to have its own, you can have an array of structures (FS_NUM sized) but then you need to  manage this array in the way you manage memory so it is easier to allocate a structure on a heap. Naturally this memory has to be released somewhere, in this case, in the thread itself. {{< /expand >}}
+{{< details "Answer" >}} One common structure is not enough as each thread has to have its own, you can have an array of structures (FS_NUM sized) but then you need to  manage this array in the way you manage memory so it is easier to allocate a structure on a heap. Naturally this memory has to be released somewhere, in this case, in the thread itself. {{< /details >}}
 
 What is the semaphore used for?
-{{< expand "Answer" >}} It keeps the count of threads that can still be started without exceeding  FS_NUM. Initially its value is set to 5 and before creating next thread it must be decreased by one. Zero value blocks the creation of the threads. Before the thread terminates it increases the semaphore by one. {{< /expand >}}
+{{< details "Answer" >}} It keeps the count of threads that can still be started without exceeding  FS_NUM. Initially its value is set to 5 and before creating next thread it must be decreased by one. Zero value blocks the creation of the threads. Before the thread terminates it increases the semaphore by one. {{< /details >}}
 
 Why sem_trywait is used not just sem_wait before the new thread is created? What if we use sem_wait instead?
-{{< expand "Answer" >}} We need to know that we reached the thread limit immediately so we can output deny message. With blocking wait we would wait until one of the threads finishes and increases the semaphore. {{< /expand >}}
+{{< details "Answer" >}} We need to know that we reached the thread limit immediately so we can output deny message. With blocking wait we would wait until one of the threads finishes and increases the semaphore. {{< /details >}}
 
 What limits the concurrent alarms to 5?
-{{< expand "Answer" >}} Semaphore, see the questions above. {{< /expand >}}
+{{< details "Answer" >}} Semaphore, see the questions above. {{< /details >}}
 
 ## Threads pool - conditional variables
 Original author: **Jerzy Bartuszek**
@@ -64,40 +64,40 @@ and terminates its execution after handling all current requests.
 It is worth of your time to analyze the above code in aspects not covered here (thread, mutex), please do it as an exercise.
 
 Can a condition of conditional variable be based on regular variable value?
-{{< expand "Answer" >}} Yes. {{< /expand >}}
+{{< details "Answer" >}} Yes. {{< /details >}}
 
 Can a condition of conditional variable be based on a combination of regular variables' values?
-{{< expand "Answer" >}} Yes. {{< /expand >}}
+{{< details "Answer" >}} Yes. {{< /details >}}
 
 Can a condition of conditional variable be based on file content?
-{{< expand "Answer" >}} Yes. {{< /expand >}}
+{{< details "Answer" >}} Yes. {{< /details >}}
 
 Can a condition of conditional variable be based on file existence?
-{{{< expand "Answer" >}} Yes. {{< /expand >}}
+{{{< details "Answer" >}} Yes. {{< /details >}}
 
 What are the limitations for the condition of conditional variable?
-{{< expand "Answer" >}} Everything you can code that will return true or false, coder imagination defines the limit. {{< /expand >}}
+{{< details "Answer" >}} Everything you can code that will return true or false, coder imagination defines the limit. {{< /details >}}
 
 Can we use conditional variable without any condition at all?
-{{< expand "Answer" >}} Yes. it will become a pool of threads waiting for wakening as you need. {{< /expand >}}
+{{< details "Answer" >}} Yes. it will become a pool of threads waiting for wakening as you need. {{< /details >}}
 
 Conditional variable must have a mutex, what is protected by it?
-{{< expand "Answer" >}} Mutex protects the access to the elements (variables,files) used in the variable condition so it remains unchanged when the code tests the condition. You must acquire the mutex prior to changing the state of those elements and prior to condition testing. {{< /expand >}}
+{{< details "Answer" >}} Mutex protects the access to the elements (variables,files) used in the variable condition so it remains unchanged when the code tests the condition. You must acquire the mutex prior to changing the state of those elements and prior to condition testing. {{< /details >}}
 
 Can one mutex protect multiple conditional variables?
-{{< expand "Answer" >}} It can, but please consider the efficiency and parallelism of your code, it will be lowered. {{< /expand >}}
+{{< details "Answer" >}} It can, but please consider the efficiency and parallelism of your code, it will be lowered. {{< /details >}}
 
 What are the parts of the condition for the conditional variable in the above code?
-{{< expand "Answer" >}} The condition is solely based on the variable called "condition", all threads have access to this variable via pointers. {{< /expand >}}
+{{< details "Answer" >}} The condition is solely based on the variable called "condition", all threads have access to this variable via pointers. {{< /details >}}
 
 How does the conditional variable works in this program?
-{{< expand "Answer" >}} When main thread accepts a new request it sets the "condition" variable to 1 and wakes one of waiting (waiting for the condition) threads. The thread that wakes, checks for "condition==1" and if it is true it handles the request. {{< /expand >}}
+{{< details "Answer" >}} When main thread accepts a new request it sets the "condition" variable to 1 and wakes one of waiting (waiting for the condition) threads. The thread that wakes, checks for "condition==1" and if it is true it handles the request. {{< /details >}}
 
 Who should check for the condition to be true? The thread that wakes or maybe the one that is being wakened?
-{{< expand "Answer" >}} The condition must be always checked by the thread being wakened. Even if the one that wakes checked it before it could have changed in meantime as the mutex was released and could have been acquired by some other thread to invalidate the condition! Generally it is better if the condition is checked also before signaling but sometimes it is not possible as wakening thread may not have access to all the condition components. {{< /expand >}}
+{{< details "Answer" >}} The condition must be always checked by the thread being wakened. Even if the one that wakes checked it before it could have changed in meantime as the mutex was released and could have been acquired by some other thread to invalidate the condition! Generally it is better if the condition is checked also before signaling but sometimes it is not possible as wakening thread may not have access to all the condition components. {{< /details >}}
 
 What is cleanup handler in working thread used for?
-{{< expand "Answer" >}} It is essential not to end the working thread without releasing the mutext that blocks the conditional (it would freeze entire program) . This handler releases the mutex in case of emergency exit. {{< /expand >}}
+{{< details "Answer" >}} It is essential not to end the working thread without releasing the mutext that blocks the conditional (it would freeze entire program) . This handler releases the mutex in case of emergency exit. {{< /details >}}
 
 ## Dice game - barrier
 
@@ -109,13 +109,13 @@ Represent each player by a thread and use a barrier for the game synchronization
 {{< includecode "prog23.c" >}}
 
 How does the barrier works in this program?
-{{< expand "Answer" >}} It is used to synchronize the threads at two key points within the thread function. The barrier ensures that all participating threads reach a specific point in their execution before allowing any of them to proceed. The barrier is initialized with a count of PLAYER_COUNT, which means it will block until PLAYER_COUNT threads have called pthread_barrier_wait. {{< /expand >}}
+{{< details "Answer" >}} It is used to synchronize the threads at two key points within the thread function. The barrier ensures that all participating threads reach a specific point in their execution before allowing any of them to proceed. The barrier is initialized with a count of PLAYER_COUNT, which means it will block until PLAYER_COUNT threads have called pthread_barrier_wait. {{< /details >}}
 
 Which parts of the thread function are called concurrently?
-{{< expand "Answer" >}} Each thread independently rolls a six-sided die, and the results are stored in the args->rolls array. This part of the code runs concurrently for all threads. {{< /expand >}}
+{{< details "Answer" >}} Each thread independently rolls a six-sided die, and the results are stored in the args->rolls array. This part of the code runs concurrently for all threads. {{< /details >}}
 
 How is the one player thread selected to conclude the round?
-{{< expand "Answer" >}} The pthread_barrier_wait function returns PTHREAD_BARRIER_SERIAL_THREAD only for one thread (standard does not specify which one), and 0 for other threads. This mechanism ensures that the action is performed by a single thread in each round, preventing multiple threads from concurrently executing the same code that should only be executed once. {{< /expand >}}
+{{< details "Answer" >}} The pthread_barrier_wait function returns PTHREAD_BARRIER_SERIAL_THREAD only for one thread (standard does not specify which one), and 0 for other threads. This mechanism ensures that the action is performed by a single thread in each round, preventing multiple threads from concurrently executing the same code that should only be executed once. {{< /details >}}
 
 As an exercise do <a href="{{< ref "/sop1/lab/l4/example1" >}}">this</a> task. It is a 150 minutes task and if you can do it in this time it means you are prepared for the lab. Now there is less time for the task and it will be slightly smaller.
 
