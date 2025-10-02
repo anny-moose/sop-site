@@ -13,8 +13,8 @@ title: "Materiały pomocnicze"
 
 ## Opisy ćwiczeń laboratoryjnych
 
-- ćwiczenie wstępne (4p): [L0 - Środowisko wykonania programu POSIX]({{< ref "lab/l0">}})
-- ćwiczenia oceniane (16p):
+- ćwiczenie wstępne: [L0 - Środowisko wykonania programu POSIX]({{< ref "lab/l0">}})
+- ćwiczenia oceniane:
     - [L1 - System plików]({{< ref "lab/l1">}})
     - [L2 - Procesy i sygnały]({{< ref "lab/l2">}})
     - [L3 - Wątki i muteksy]({{< ref "lab/l3">}})

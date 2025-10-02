@@ -2,11 +2,10 @@
 title: "Program przedmiotu"
 ---
 
- - Wykład: 15h
- - Laboratorium: 15h
+ - Wykład: 30h
+ - Laboratorium: 30h
  - Ćwiczenia: brak
- - Projekt: brak
- - ECTS: 2
+ - ECTS: 4
 
 ## Cele przedmiotu
 

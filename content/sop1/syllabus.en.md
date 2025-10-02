@@ -2,11 +2,10 @@
 title: "Syllabus"
 ---
 
- - Lecture: 15h
- - Laboratory: 15h
+ - Lecture: 30h
+ - Laboratory: 30h
  - Excercises: brak
- - Project: brak
- - ECTS: 2
+ - ECTS: 4
 
 ## Course objectives
 
