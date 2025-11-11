@@ -6,6 +6,7 @@
 #include <sys/wait.h>
 #include <time.h>
 #include <unistd.h>
+
 #define ERR(source) \
     (fprintf(stderr, "%s:%d\n", __FILE__, __LINE__), perror(source), kill(0, SIGKILL), exit(EXIT_FAILURE))
 
@@ -20,11 +21,12 @@ void child_work(int i)
 void create_children(int n)
 {
     pid_t s;
-    for (n--; n >= 0; n--)
+    for (int i = 0; i < n; ++i)
     {
         if ((s = fork()) < 0)
             ERR("Fork:");
-        if (!s)
+
+        if (s == 0)
         {
             child_work(n);
             exit(EXIT_SUCCESS);
@@ -40,18 +42,19 @@ void usage(char *name)
 
 int main(int argc, char **argv)
 {
-    int n;
     if (argc < 2)
         usage(argv[0]);
-    n = atoi(argv[1]);
+
+    int n = atoi(argv[1]);
     if (n <= 0)
         usage(argv[0]);
+
     create_children(n);
     while (n > 0)
     {
         sleep(3);
         pid_t pid;
-        for (;;)
+        while (1)
         {
             pid = waitpid(0, NULL, WNOHANG);
             if (pid > 0)
