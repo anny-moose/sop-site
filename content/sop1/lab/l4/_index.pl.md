@@ -38,7 +38,7 @@ Gdzie jest odliczany czas?
 {{< details "Answer" >}} W wątku roboczym, w tym celu go tworzymy. {{< /details >}}
 
 Czemu służy semafor?
-{{< details "Answer" >}} Semafor odlicza ile jeszcze wątków można utworzyć aby na raz nie działało ich więcej niż FS_NUM (10). Na początek jego wartość to 10, przed utworzeniem kolejnego wątku zmniejszamy wartość semafora. Zanim wątek skończy zwiększa tą wartość. Jeśli wartość semafora jest zerowa to nie da się już utworzyć kolejnego wątku. {{< /details >}}
+{{< details "Answer" >}} Semafor odlicza ile jeszcze wątków można utworzyć aby na raz nie działało ich więcej niż FS_NUM (5). Na początek jego wartość to 5, przed utworzeniem kolejnego wątku zmniejszamy wartość semafora. Zanim wątek skończy zwiększa tą wartość. Jeśli wartość semafora jest zerowa to nie da się już utworzyć kolejnego wątku. {{< /details >}}
 
 Czemu przed utworzeniem kolejnego wątku roboczego w programie używamy sem_trywait? Co się stanie gdy zamienimy to na sem_wait?
 {{< details "Answer" >}} Robimy tak, aby od razu zorientować się, że wyczerpaliśmy limit wątków. Gdyby zastąpić trywait wait'em to program poczekałby aż się zwolni jakiś wątek i dopiero wtedy obsłużyłby zadanie, ale to oznacza, że czas odliczony dla tego zadania byłby dłuższy niż użytkownik żądał! {{< /details >}}
@@ -66,7 +66,7 @@ Czy warunek dla zmiennej warunkowej może być oparty na zawartości pliku?
 {{< details "Answer" >}} Tak. {{< /details >}}
 
 Czy warunek dla zmiennej warunkowej może być oparty na istnieniu pliku?
-{{{< details "Answer" >}} Tak. {{< /details >}}
+{{< details "Answer" >}} Tak. {{< /details >}}
 
 Jak można ogólnie określić na czym może być oparty warunek zmiennej warunkowej
 {{< details "Answer" >}} Warunek może być absolutnie dowolny, to kod napisany przez programistę o tym decyduję więc granicą tego czym może być warunek jest tylko wyobraźnia kodującego. {{< /details >}}
@@ -95,7 +95,7 @@ Czemu służy cleanup handler w wątku roboczym?
 ## Dice game - barrier
 
 Zasymuluj następującą grę w kości:
-Każdy uczestnik jednocześnie rzuca kością sześcienną przez 10 rund. Po każdym rzucie gracza, jeden z graczy posumowuje rundę i przypisuje punkty. Gracz z najwyższym wynikiem w danej rundzie otrzymuje jeden punkt. W przypadku remisu, wszyscy zremisowani gracze otrzymują punkt. Gra kończy się po 10 rundach, a zwycięzcą zostaje gracz z najwyższą sumą punktów.
+Każdy uczestnik jednocześnie rzuca kością sześcienną przez 10 rund. Po każdym rzucie gracza, jeden z graczy podsumowuje rundę i przypisuje punkty. Gracz z najwyższym wynikiem w danej rundzie otrzymuje jeden punkt. W przypadku remisu, wszyscy zremisowani gracze otrzymują punkt. Gra kończy się po 10 rundach, a zwycięzcą zostaje gracz z najwyższą sumą punktów.
 Reprezentuj każdego gracza za pomocą wątku i użyj bariery do synchronizacji gry.
 
 <em>solution <b>prog23.c</b>:</em>
@@ -107,7 +107,7 @@ Jak działa bariera w tym programie?
 Które części funkcji wątku są wywoływane współbieżnie?
 {{< details "Answer" >}} Każdy wątek niezależnie rzuca sześcienną kością, a wyniki są przechowywane w tablicy args->rolls. Ten fragment kodu jest wykonywany równocześnie przez wszystkie wątki. {{< /details >}}
 
-Jak jest wybierany wątek jednego gracza do posumowania rundy?
+Jak jest wybierany wątek jednego gracza do podsumowania rundy?
 {{< details "Answer" >}} pthread_barrier_wait zwraca PTHREAD_BARRIER_SERIAL_THREAD tylko dla jednego wątku (standard nie określa, który to wątek), a dla innych wątków zwraca 0. Ten mechanizm zapewnia, że akcja jest wykonywana tylko przez jeden wątek w każdej rundzie, uniemożliwiając wielokrotne równoczesne wykonanie tego samego kodu, który powinien być wykonany tylko raz. {{< /details >}}
 
 Wykonaj przykładowe zadania. Podczas laboratorium będziesz miał więcej czasu oraz dostępny startowy kod, jeśli jednak wykonasz poniższe zadania w przewidzianym czasie, to znaczy, że jesteś dobrze przygotowany do zajęć.
