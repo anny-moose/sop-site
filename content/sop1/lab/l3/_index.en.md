@@ -80,7 +80,7 @@ More information:
 man 3p pthread_join
 ```
 
-## Task 1 - simple joinable threads, synchronization and threads return values
+### Excercise
 
 Goal: 
 Write a program to approximate PI value with Monte Carlo method, program takes the following parameters:
@@ -97,7 +97,9 @@ What you need to know:
 - man 3p rand (especially  rand_r)
 - Monte-Carlo method, in paragraph "Monte Carlo methods" on this <a href="https://en.wikipedia.org/wiki/Pi#Monte_Carlo_methods"> site.</a>
 
-<em>Solution <b>Makefile</b>:</em>
+### Solution
+
+<em><b>Makefile</b>:</em>
 
 ```makefile
 CC=gcc
@@ -111,6 +113,8 @@ write the name of the library without first "lib" part)
 
 <em>Solution <b>prog17.c</b>:</em>
 {{< includecode "prog17.c" >}}
+
+### Notes and questions
 
 Functions' declarations at the beginning of the code (not the functions definitions) are quite useful, sometimes
 mandatory. If you do not know the difference please
@@ -155,7 +159,60 @@ Why can't we return the data as the address of local (to the thread) automatic v
 Can we avoid memory allocation in the working thread?
 {{< details "Answer"  >}} Yes, if we add extra variable to the input structure of the thread. The result can then be stored in this variable.  {{< /details  >}}
 
-## Task 2 - simple detachable threads with common variables and access mutex
+## Detachable threads & Synchronization
+
+### Overview
+
+A detached thread is a thread that you need not collect. While it's convenient, it also has downsides, such as not knowing when thread execution ends(it is not joinable) and not being able to obtain anything from it without extra synchronization. There are two ways to obtain a detached thread, those being either spawning a detached thread or manually detaching an already running thread.
+
+### Spawning a detached thread
+
+In order to spawn a detached thread, you must first create a `pthread_attr_t` object that will later be passed to the `pthread_create` function. In order to initialize one to the default state, you must call `pthread_attr_init`. Then, you have to set it's detached state to `PTHREAD_CREATE_DETACHED` using the `pthread_attr_setdetachstate` function. Since you have to init the attributes structure, you also have to destroy it later using `pthread_attr_destroy`.
+
+More information:
+```
+man 3p pthread_attr_destroy
+man 3p pthread_attr_getdetachstate
+man 3p pthread_create
+```
+
+### Detaching a running thread
+
+As mentioned above, you may also detach a running thread. You can do it by calling `pthread_detach` with the thread's handle. A thread may detach itself in this way by first obtaining it's own handle via a `pthread_self` call, and then calling `pthread_detach`. Attempting to detach a thread that's already detached results in undefined behavior and shouldn't be done.
+
+More information:
+```
+man 3p pthread_detach
+man 3p pthread_self
+```
+
+### Mutual exclusion
+Since a detached thread on it's own is effectively useless, we are introducing shared state between the threads. It means, that two or more threads have to work on the same structure. This is problematic, as we currently have no way of ensuring that a thread won't write to a field that is currently being read by another thread. (and vice versa)
+
+This is where mutexes come into play. In short - a mutex is a special object that prevents two or more threads from holding it at the same time. It is recommended to read more about mutexes if you don't know what a mutex is.
+
+You initialize a mutex by calling the `pthread_mutex_init` function. You would later destroy it by calling the `pthread_mutex_destroy` function.
+```
+int pthread_mutex_init(pthread_mutex_t *restrict mutex,
+   const pthread_mutexattr_t *restrict attr);
+```
+Like `pthread_create`, `pthread_mutex_init` also accepts an attributes object. Similarly, it can be `NULL` to use the default attributes. (See `man 3p pthread_mutexattr_destroy` and `man -k pthread_mutexattr_set` for additional info)
+
+
+
+Just creating a mutex isn't enough, you also need to acquire it when accessing shared state. That can be done using `pthread_mutex_lock`. This function blocks until it can acquire the mutex, then tries to acquire it. While it can fail, it's failure usually indicates serious memory corruption, and thus the return value of this function won't be checked in the further examples.
+
+After you have acquired the mutex, you should not attempt to re-acquire it before releasing. This results in a deadlock in the majority of cases.
+
+After you are done modifying the shared state, you should release the mutex by calling `pthread_mutex_unlock`, so that another thread can lock it. Ideally, you should minimize the time you're holding the mutex for, as it slows down other threads that use it.
+
+More information:
+```
+man 3p pthread_mutex_destroy
+man 3p pthread_mutex_lock
+```
+
+### Excercise
 
 Goal: 
 Write binomial distribution visualization program, use Bean Machine (Galton board) method with 11 bins for bens. The program takes two parameters:
@@ -176,6 +233,7 @@ What you need to know:
 - man 3p pthread_attr_getdetachstate
 - Bean machine on this <a href="https://en.wikipedia.org/wiki/Bean_machine"> site.</a>
 
+### Solution
 <em>Solution <b>prog18.c</b>:</em>
 {{< includecode "prog18.c" >}}
 
