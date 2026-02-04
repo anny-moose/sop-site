@@ -243,6 +243,8 @@ What you need to know:
 <em>Solution <b>prog18.c</b>:</em>
 {{< includecode "prog18.c" >}}
 
+### Notes and questions
+
 Once again, all thread input data is passed as pointer to the structure `thrower_args_t`, treads results modify bins array (
 pointer in the same structure), no global variables used.
 
@@ -275,8 +277,9 @@ To check if the working threads terminated, the main threads periodically  check
 Do all the threads created in this program really work?
 {{< details "Answer"  >}} No, especially when there is a lot of threads. It is possible that some of threads "starve". The work code for the thread is very fast, thread creation is rather slow, it is possible that last threads created will have no beans left to throw. To check it please add per thread thrown beans counters and print them on stdout at the thread termination. The problem can be avoided if we add synchronization on threads start - make them start at the same time but this again requires the methods that will be introduced later. (barier or conditional variable) {{< /details  >}}
 
-## Task 3 - threads and signals, waiting for a thread with sigwait function
+## Signals
 
+### Excercise
 Goal: 
 The program takes sole 'k' parameter and prints the list of numbers form 1 to k at each second. It must handle two signals in dedicated thread, the following action must be taken upon the signal arrival:
 - SIGINT  (C-c) ... removes random number from the list (do nothing if empty),
@@ -285,11 +288,12 @@ The program takes sole 'k' parameter and prints the list of numbers form 1 to k 
 What you need to know:
 
 - man 3p pthread_sigmask
-- man 3p sigprocmask
 - man 3p sigwait
 
 <em>Solution <b>prog19.c</b>:</em>
 {{< includecode "prog19.c" >}}
+
+### Notes and questions
 
 Thread input structure argsSignalHandler_t holds the shared threads data (an array and STOP flag) with protective
 mutexes and not shared (signal mask and tid of thread designated to handle the signals).
@@ -321,7 +325,91 @@ Why system calls to functions operating on mutex (acquire, release)  are not tes
 {{< details "Answer"  >}} Basic mutex type (the type used in this program, default one) is not checking nor reporting errors. Adding those checks would not be such a bad idea as they are not harming the code and if you decide to later change the mutex type to error checking it will not require many changes in the code. {{< /details  >}}
 
 
-## Task 4 - threads cancellation, cleanup handlers
+## Thread cancelation
+
+### Canceling a thread
+
+A thread can be canceled using the `pthread_cancel` function.
+This is useful when the program has to exit before it finishes its work, for example due to a signal.
+
+More information:
+```
+man 3p pthread_cancel
+```
+
+### Setting cancelability
+
+A thread can choose how it will respond to cancelation requests using the following functions:
+
+```
+int pthread_setcancelstate(int state, int *oldstate);
+int pthread_setcanceltype(int type, int *oldtype);
+```
+
+Cancelation requests can be ignored by setting the cancel state to `PTHREAD_CANCEL_DISABLE` and then later re-enabled by setting it to `PTHREAD_CANCEL_ENABLE`.
+Cancelation is enabled by default.
+
+The cancel type determines when the thread exits upon recieving a cancelation request.
+It is set to `PTHREAD_CANCEL_DEFERRED` by default, in which case the thread exits at a cancelation point.
+If it is set to `PTHREAD_CANCEL_ASYNCHRONOUS`, the thread will exit as soon as possible.
+
+{{< details "Note"  >}} Generally, it is safer to keep the cancel type as PTHREAD_CANCEL_DEFERRED,
+as you may have an unpreventable race condition in the case of asynchronous cancelation
+(e.g a thread gets canceled after you lock a mutex but before you add a cleanup function) {{< /details  >}}
+
+More information:
+```
+man 3p pthread_setcancelstate
+man 7 pthreads (specifically the "Cancelation Points" section)
+```
+
+### Cleanup functions
+
+In a lot of cases, exiting a thread mid-execution leaks resources.
+This is problematic, especially if a thread is holding a mutex - as it won't be released.
+
+To solve this issue, POSIX allows creating cleanup handlers that run when the thread has to exit abruptly. (i.e due to being cancelled or calling `pthread_exit`)
+
+Those take form of a function with the following signature:
+```
+void function(void* arg);
+```
+
+You can add this function as a cleanup handle by issuing the `pthread_cleanup_push` call. Let's take a look at the function declaration.
+```
+void pthread_cleanup_push(void (*routine)(void*), void *arg);
+```
+As you can see, the function accepts the aforementioned function along with the argument that will be passed to it.
+
+When a thread exits abruptly, all of the cleanup functions are executed in the reverse order of their addition.
+
+You also can remove cleanup handlers by issuing `pthread_cleanup_pop`.
+```
+void pthread_cleanup_pop(int execute);
+```
+This function removes the handlers in the same order as they would be executed. 
+The `execute` parameter allows for optional execution of the handler.
+
+{{< details "Note"  >}} For every instance of pthread_cleanup_push in a scope there must be an instance of pthread_cleanup_pop {{< /details  >}}
+
+More information:
+```
+man 3p pthread_cleanup_pop
+```
+
+### Joining canceled threads
+
+Canceled threads remain joinable, since a cancel request isn't guaranteed to be processed.
+
+If a thread gets canceled, the value pointer passed to `pthread_join` will be set to `PTHREAD_CANCELED`
+
+More information:
+```
+man 3p pthread_join
+man 3p pthread_exit (specifically the last paragraph of the RATIONALE section)
+```
+
+### Excercise
 
 Goal: 
 Program simulates the faith of MiNI students, it takes the following parameter:
@@ -344,6 +432,7 @@ What you need to know:
 <em>Solution <b>prog20.c</b>:</em>
 {{< includecode "prog20.c" >}}
 
+### Notes and questions
 Threads receive the pointer to the structure with current year and pointer to years counters, structure argsModify_t
 does not have the same flow as one in task 2 of this tutorial i.e. program is not making too many unnecessary references
 to the same data.
