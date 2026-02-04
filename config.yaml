@@ -23,6 +23,16 @@ languages:
 params:
   BookTheme: "auto"
   BookSection: "*"
+  BookRepo: https://github.com/SOP-MINI/sop-site
+  BookEditPath: edit/master
+  BookCommitPath: commit
+  BookDateFormat: '2 January 2006'
+
+menu:
+  after:
+    - name: "Github"
+      url: https://github.com/SOP-MINI/sop-site
+      weight: 10
 
 markup:
   goldmark:
