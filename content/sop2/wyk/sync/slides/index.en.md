@@ -78,7 +78,7 @@ The server needs to ensure that _only one thread at any time point executes_ `tr
 
 ### Problem Definition
 
-Ensuring something some memory area is accessed by at most one CPU 
+Ensuring something some memory area is accessed by at most one CPU
 is a very common concern in concurrent systems, known as **critical section problem**.
 
 ```c
@@ -105,8 +105,8 @@ Any valid solution must satisfy three conditions:
 1. **Mutual Exclusion:** At most one process can be inside the CS at any given time.
 2. **Progress:** If the CS is free, and some processes are waiting in the entry section, one will eventually enter.
    Decision may not be postponed indefinitely.
-3. **Bounded Waiting:** When some process enters entry section it start counting number of times others have entered CS. 
-   A bound must exist for this counter. 
+3. **Bounded Waiting:** When some process enters entry section it start counting number of times others have entered CS.
+   A bound must exist for this counter.
 
 Consider why 1. or 1. & 2. are not enough.
 
@@ -213,7 +213,7 @@ Case 2: Second enters after reading turn = me
 `turn` cannot be both `0` and `1` at the same time.
 
 **Bounded waiting** holds since if process `Pi` already waits in `while`
-the other one can't enter first, even if it would extremely fast reach its `while` again.  
+the other one can't enter first, even if it would extremely fast reach its `while` again.
 
 ---
 
@@ -224,7 +224,7 @@ the other one can't enter first, even if it would extremely fast reach its `whil
 
 ## CPU communication
 
-The solution to the problem of touching the shared concurrently data was 
+The solution to the problem of touching the shared concurrently data was
 touching some (other) shared data itself!
 
 That's the only option we have: inter CPU core communication is possible through the main memory only!
@@ -239,12 +239,12 @@ Peterson's solution assumes:
 
 - solution's code is literally translated to machine instructions, preserving source operation order
 - reads and writes of shared integers are **atomic**
-  - cores reading concurrently written values may not observe partly updated value
-  - they read either value before the change or fully overwritten
+    - cores reading concurrently written values may not observe partly updated value
+    - they read either value before the change or fully overwritten
 - **consistent ordering** of memory operations
-  - when one core writes `a` and then `b`, others observe changes in exactly the same order
+    - when one core writes `a` and then `b`, others observe changes in exactly the same order
 
-On modern platforms none of this is true! To make any synchronization algorithm work we 
+On modern platforms none of this is true! To make any synchronization algorithm work we
 need to overcome all of these.
 
 ---
@@ -301,7 +301,7 @@ shared_val = 0x0000000100000001ULL;
 //  mov     DWORD PTR shared_val, 1
 //  mov     DWORD PTR shared_val+4, 1
 ```
-See in [compiler exprlorer](https://godbolt.org/z/o7fWo8bMx)
+See in [compiler explorer](https://godbolt.org/z/o7fWo8bMx)
 
 Fortunately nearly all (**aligned!**) 2, 4, 8 byte accesses
 on modern hardware are atomic.
@@ -363,7 +363,7 @@ The hardware disregards by default the existence of other cores reading those sa
 Those effects make life of concurrency programmers tough. Hardware providers were eventually forced to describe
 how memory works on their system and what programs can expect.
 
-**x86 (TSO - Total Store Order):** A relatively strong model. Each core has a local buffering queue of memory updates, which is eventually flushed. 
+**x86 (TSO - Total Store Order):** A relatively strong model. Each core has a local buffering queue of memory updates, which is eventually flushed.
 
 ![tso.png](/ops2/wyk/sync/tso.png)
 
@@ -407,7 +407,7 @@ Pre-C11: The C language had absolutely no concept of threads or sharing memory.
 **From C11 onwards:**
 Any Data Race is officially classified as **Undefined Behavior**.
 
-Compilers and libraries provide means of issuing atomic load store instructions and placing 
+Compilers and libraries provide means of issuing atomic load store instructions and placing
 memory barriers like so:
 
 ```c
@@ -436,7 +436,7 @@ Hardware to the rescue! (leaving Peterson behind)
 Solutions like Peterson's are complex and slow (require multiple instructions).
 We need help from the CPU.
 
-Standard loads (`r = x`) and stores (`x = 1`) are not enough. 
+Standard loads (`r = x`) and stores (`x = 1`) are not enough.
 It'd be best to read a value, modify it, and write it back **in a single, indivisible step**.
 
 Modern CPUs provide specialized **Atomic Instructions** to do exactly this.
@@ -509,7 +509,7 @@ If it returns `1`, someone else has it, but you just safely overwrote 1 with 1.
 ```c
 #include <stdatomic.h>
 
-atomic_flag mtx = 0;
+atomic_flag mtx = ATOMIC_FLAG_INIT;
 
 void lock() {
     while (atomic_test_and_set(&mtx)) {
@@ -557,7 +557,7 @@ While for spinlock simple TAS is enough, CAS allows for implementing more comple
 
 3. **Bounded Waiting**: NO! Spinlocks offer no fairness. A fast thread can release and re-acquire the lock before a waiting thread's atomic instruction executes.
 
-Spinlocks have another major flaw - **busy waiting**. 
+Spinlocks have another major flaw - **busy waiting**.
 
 If thread A holds the lock for a longer time (possibly gets preempted by the OS scheduler),
 thread B will burn 100% of its CPU timeslice just checking.
@@ -614,13 +614,13 @@ and `signal()` on the same semaphore concurrently.
 
 Thus, the implementation becomes the critical section problem in itself.
 
-Here however, in the OS code, busy-waiting solution is perfect. The code within 
+Here however, in the OS code, busy-waiting solution is perfect. The code within
 CS is short and fully under OS control.
 
 ---
 
 ```c
-void signal(semaphore *S) {
+void wait(semaphore *S) {
     lock(&S->lock);
     S->value--;
     if (S->value < 0) {
@@ -652,7 +652,7 @@ Semaphores solve the CPU burning problem! But they introduce a new one: system c
 `wait()` and `post()` must be syscalls. Each time process wants to synchronize it must switch into the kernel mode,
 even if the critical section is free.
 
-If the lock is completely free (uncontended), trapping into the kernel just to decrement 
+If the lock is completely free (uncontended), trapping into the kernel just to decrement
 a counter from 1 to 0 is thousands of times slower than a simple userspace atomic operation.
 
 ---
@@ -683,7 +683,7 @@ Kernel maintains a waitlist associated with futex address.
 
 uint32_t ftx; // A 32-bit futex
 
-// Liunx syscall
+// Linux syscall
 long syscall(SYS_futex, uint32_t *uaddr, int op, ...);
 ```
 
@@ -698,28 +698,53 @@ Only if a thread fails to acquire the lock and needs to block it calls into the 
 The `futex()` syscall operates differently depending on `op` parameter:
 
 - `FUTEX_WAIT` blocks calling process (adds it to the associated waitlist)
-- `FUTEX_WAKE` wakeups all blocked threads (flushes waitlist)
+- `FUTEX_WAKE` wakes up blocked threads (pops from waitlist)
 
-Kernel implementation initially compares futex value to what calling thread
-believed it to be before making calling into the syscall. It fast-fails on mismatch.
+Kernel implementation compares futex value to what calling thread
+believed it to be before making calling into the OS. The Syscall fast-fails on mismatch.
 
 ```c
 futex(&ftx, FUTEX_WAIT, /*expected*/2);
 ```
 
-The value check, and later enqueueing and blocking of the caller is done in a kernel side critical section (spinlock). 
+From `man 2 futex`:
+> "The loading of the futex word's value, the comparison of that value with
+the  expected value, and the actual blocking will happen atomically [...]"
+
+---
+
+### Simplified mutex implementation
+
+```c++
+void simple_lock(simple_mutex_t *m) {
+    while (atomic_exchange(&m->state, 1) != 0) {
+        // Fast lock failed, need to wait
+        // Sleep, but if and ONLY if the state is still 1
+        futex(&m->state, FUTEX_WAIT, 1);
+    }
+}
+
+void simple_unlock(simple_mutex_t *m) {
+    atomic_store(&m->state, 0);
+    // Wake possible waiter
+    futex(&m->state, FUTEX_WAKE, 1);
+}
+```
 
 ---
 
 ![ftx.svg](/ops2/wyk/sync/ftx.svg)
 
-Note that `ftx` word may be changed by others at any time - before syscall, after syscall, anywhere within the CS!
+Note that despite CS in the kernel side `ftx` word may be changed by other cores at any time!
+`simple_unlock()` unconditionally calls `FUTEX_WAKE` to deal with such situations.
 
 ---
 
 ### Lock() implementation
 
-Futex word has 3 states: free (`0`), locked (`1`) and locked with possible waiters (`2`).
+Simple version calls `FUTEX_WAKE` unconditionally so it does not take full advantage of syscall-free fast paths.
+
+In fully-grown implementation the futex word has 3 states:<br>free (`0`), locked (`1`) and locked with possible waiters (`2`).
 
 ```c
 int expected = 0;
@@ -727,7 +752,7 @@ if (atomic_compare_exchange(&ftx, &expected, 1)) {
     return; // Locked first! No syscall!
 }
 while (1) {
-    if (atomic_exchange(&ftx, 2) > 0) {
+    if (atomic_exchange(&ftx, 2) != 0) {
         futex(&ftx, FUTEX_WAIT, 2);
     } else {
         return;
@@ -751,3 +776,7 @@ void unlock(futex_mutex_t *m) {
     futex(&m->state, FUTEX_WAKE, 1); 
 }
 ```
+
+---
+
+### THE END
