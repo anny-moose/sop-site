@@ -19,7 +19,7 @@ bookCollapseSection: true
 - Model pamięci C11+
 - Bariery pamięciowe
 - Sprzętowe wsparcie synchronizacji: operacje Read-Modify-Write
-- Atomic Swap (XCHG)[_index.en.md](_index.en.md)
+- Atomic Swap (XCHG)
 - Test-and-Set (TAS) 
 - Compare-and-Swap (CAS / cmpxchg)
 - Spinlocki i problem aktywnego czekania
