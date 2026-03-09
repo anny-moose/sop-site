@@ -1,7 +1,7 @@
 ---
-title: "Synchronizacja i zakleszczenia"
+title: "Zakleszczenia"
 date: 2022-01-28T17:23:23+01:00
-weight: 30
+weight: 40
 ---
 
 # Wykład 3 - Synchronizacja i zakleszczenia

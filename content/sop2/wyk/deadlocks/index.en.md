@@ -1,7 +1,7 @@
 ---
-title: "Synchronization and deadlocks"
+title: "Deadlocks"
 date: 2022-01-28T17:23:23+01:00
-weight: 30
+weight: 40
 ---
 
 # Lecture 3 - Synchronization and deadlocks
