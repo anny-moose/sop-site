@@ -457,10 +457,10 @@ while (readers_count > 0 || writers_count > 0)
     pthread_cond_wait(&cv, &mtx);
 writers_count++;
 pthread_mutex_unlock(&mtx);
-/* read */
+/* write */
 pthread_mutex_lock(&mtx);
 writers_count--;
-pthread_cond_signal(&cv);
+pthread_cond_broadcast(&cv);
 pthread_mutex_unlock(&cv);
 ```
 

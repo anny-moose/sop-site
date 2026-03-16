@@ -1,4 +1,4 @@
-CODEDIRS := shm/code sync/code
+CODEDIRS := shm/code sync/code sync2/code
 
 .PHONY: all clean $(CODEDIRS)
 
